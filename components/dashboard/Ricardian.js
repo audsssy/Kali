@@ -4,6 +4,7 @@ import { Text, HStack, Link, Icon, UnorderedList, ListItem } from "@chakra-ui/re
 import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
 import { PDFDownloadLink } from "@react-pdf/renderer"
 import RicardianTemplate from "../../legal/formation/llc/series/RicardianTemplate"
+import DelawareOAtemplate from "../../legal/formation/llc/DelawareOAtemplate"
 
 
 export default function Ricardian() {
@@ -37,6 +38,7 @@ export default function Ricardian() {
             <Link passHref href={dao["ricardian"]["masterOperatingAgreement"]}>
               <Icon as={BsFillArrowUpRightSquareFill} />
             </Link>
+          </ListItem>
           <ListItem>
             <Text>Series Operating Agreement: </Text>
             {isClient && (
@@ -54,6 +56,22 @@ export default function Ricardian() {
               </PDFDownloadLink>
             )}
           </ListItem>
+          <ListItem>
+            <Text>Delaware Operating Agreement: </Text>
+            {isClient && (
+              <PDFDownloadLink
+                document={<DelawareOAtemplate />}
+                fileName="FORM"
+              >
+                {({ loading }) =>
+                  loading ? (
+                    <button>Loading Document...</button>
+                  ) : (
+                    <button>Download</button>
+                  )
+                }
+              </PDFDownloadLink>
+            )}
           </ListItem>
         </UnorderedList>
       )}
