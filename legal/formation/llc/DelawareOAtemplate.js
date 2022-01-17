@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
 const Br = () => "\n"
 const Indent = () => "   "
 
-const DelawareLLCtemplate = () => {
+const DelawareOAtemplate = () => {
   return (
     <Document>
       <Page style={styles.body}>
@@ -819,4 +819,4 @@ const DelawareLLCtemplate = () => {
   )
 }
 
-export default DelawareLLCtemplate
+export default DelawareOAtemplate

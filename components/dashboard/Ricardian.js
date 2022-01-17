@@ -5,6 +5,7 @@ import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
 import { PDFDownloadLink } from "@react-pdf/renderer"
 import RicardianTemplate from "../../legal/formation/llc/series/RicardianTemplate"
 import DelawareOAtemplate from "../../legal/formation/llc/DelawareOAtemplate"
+import DelawareInvestmentClubTemplate from "../../legal/formation/llc/DelawareInvestmentClubTemplate"
 
 
 export default function Ricardian() {
@@ -61,6 +62,23 @@ export default function Ricardian() {
             {isClient && (
               <PDFDownloadLink
                 document={<DelawareOAtemplate />}
+                fileName="FORM"
+              >
+                {({ loading }) =>
+                  loading ? (
+                    <button>Loading Document...</button>
+                  ) : (
+                    <button>Download</button>
+                  )
+                }
+              </PDFDownloadLink>
+            )}
+          </ListItem>
+          <ListItem>
+            <Text>Delaware Investment Club Agreement: </Text>
+            {isClient && (
+              <PDFDownloadLink
+                document={<DelawareInvestmentClubTemplate />}
                 fileName="FORM"
               >
                 {({ loading }) =>
