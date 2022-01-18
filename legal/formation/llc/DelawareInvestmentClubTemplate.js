@@ -79,17 +79,15 @@ const styles = StyleSheet.create({
 const Br = () => "\n"
 const Indent = () => "   "
 
-const DelawareInvestmentClubTemplate = () => {
+const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address, code, reference }) => {
   return (
     <Document>
       <Page style={styles.body}>
-        <Text style={styles.heading1}>
-          OPERATING AGREEMENT OF {"[[DAO LLC NAME]]"}
-        </Text>
+        <Text style={styles.heading1}>OPERATING AGREEMENT OF {name}</Text>
         <Text style={styles.text}>
           This Operating Agreement (this “Agreement”) sets forth the rights and
-          obligations among {"[[DAO LLC NAME]]"}, a Delaware limited liability
-          company (the “Org”) and the members of the Org.
+          obligations among {name}, a Delaware limited liability company (the
+          “Org”) and the members of the Org.
         </Text>
         <Text style={styles.heading1}>BACKGROUND</Text>
         <Text style={styles.numbered_list}>
@@ -126,7 +124,7 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           1.1
           <Indent />
-          Terms and Conditions of Membership.
+          <Text style={{ textDecoration: "underline" }}>Terms and Conditions of Membership.</Text>
           <Br />
           <Br />
           (a)
@@ -165,15 +163,17 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           1.2
           <Indent />
-          Name of Org The name of the Org shall be [[DAO LLC Name]] or such
-          other name as may be determined from time to time in accordance with
-          this Agreement.
+          <Text style={{ textDecoration: "underline" }}>Name of Org.</Text>
+          <Indent />
+          The name of the Org shall be {name} or such other name as may be
+          determined from time to time in accordance with this Agreement.
           <Br />
           <Br />
           1.3
           <Indent />
-          Place of Business; Registered Office.
-          <Text style={{ textDecoration: "underline" }}></Text>
+          <Text style={{ textDecoration: "underline" }}>
+            Place of Business; Registered Office.
+          </Text>
           <Indent />
           The Org has no fixed offices or place of business. The Org’s
           activities are directed, controlled, and coordinated primarily through
@@ -344,21 +344,20 @@ const DelawareInvestmentClubTemplate = () => {
           running the Designated Blockchain Client on the Designated Blockchain
           Network recognize as canonical as of such time in accordance with the
           Consensus Rules. The initial Designated Blockchain shall be the
-          [[Designated Blockchain]] blockchain as recognized by the Designated
-          Blockchain Client on the Designated Blockchain Network.
+          {chain} blockchain as recognized by the Designated Blockchain Client
+          on the Designated Blockchain Network.
           <Br />
           <Br />
           (vi) “Designated Blockchain Client” means the blockchain software
           client designated as the “Designated Blockchain Client” by the
           Members. The initial Designated Blockchain Client shall be
-          [[Designated Blockchain Client]], as it may be updated from time to
-          time.
+          {client}, as it may be updated from time to time.
           <Br />
           <Br />
           (vii) “Designated Blockchain Network” means the blockchain network
           designated as the “Designated Blockchain Network” by the Members. The
-          initial Designated Blockchain Network shall be [[Designated Blockchain
-          Network]] as recognized by the Designated Blockchain Client.
+          initial Designated Blockchain Network shall be {network} as recognized
+          by the Designated Blockchain Client.
           <Br />
           <Br />
           (viii) “Designated Blockchain Network Account Address” means a public
@@ -380,18 +379,16 @@ const DelawareInvestmentClubTemplate = () => {
           Interests, the submission, voting and passage of Proposals and the
           escrow, release allocation of Tokens owned by the Org or the Members
           is the instance of the applicable Designated Smart Contract Source
-          Code deployed to the Designated Blockchain at [[Designated Smart
-          Contract Address]] as recognized by the Designated Client on the
-          Designated Blockchain Network (the “Designated Governance Smart
-          Contract”).
+          Code deployed to the Designated Blockchain at {address} as recognized
+          by the Designated Client on the Designated Blockchain Network (the
+          “Designated Governance Smart Contract”).
           <Br />
           <Br />
           (x) “Designated Smart Contract Source Code” means the source code that
           has been designated by the Members to be deployed as a Designated
           Smart Contract. The initial Designated Smart Contract Source Code for
-          the Designated Governance Smart Contract is the [[Designated Smart
-          Contract Source Code]] code referenced at [[Designated Smart Contract
-          Source Code Reference]].
+          the Designated Governance Smart Contract is the {code} code referenced
+          at {reference}.
           <Br />
           <Br />
           (xi) “Distributed Org Property” means any asset, right or property
@@ -2360,16 +2357,13 @@ const DelawareInvestmentClubTemplate = () => {
       </Page>
       <Page style={styles.body}>
         <Text style={styles.heading1}>Exhibit A - JOINDER AGREEMENT</Text>
-        <Text style={styles.text}>
-          JOINDER TO {"[[DAO LLC NAME]]"} AGREEMENT
-        </Text>
+        <Text style={styles.text}>JOINDER TO {name} AGREEMENT</Text>
         <Text style={styles.numbered_list}>
-          This JOINDER (this “Joinder”) to the Operating Agreement of [[DAO LLC
-          Name]] (the “Agreement”), a copy of which has been made available to
-          you, is being made and entered into by the Person indicated on the
-          signature page hereto (the “Candidate”). Capitalized terms used herein
-          but not otherwise defined shall have the meanings set forth in the
-          Agreement.
+          This JOINDER (this “Joinder”) to the Operating Agreement of {name}{" "}
+          (the “Agreement”), a copy of which has been made available to you, is
+          being made and entered into by the Person indicated on the signature
+          page hereto (the “Candidate”). Capitalized terms used herein but not
+          otherwise defined shall have the meanings set forth in the Agreement.
           <Br />
           <Br />
           WHEREAS, subject to the terms and conditions of this Joinder and the
@@ -2429,15 +2423,15 @@ const DelawareInvestmentClubTemplate = () => {
         <Text style={styles.heading1}>
           Exhibit B - ACCREDITED INVESTOR QUESTIONNAIRE
         </Text>
-        <Text style={styles.text}>{"[[DAO LLC NAME]]"}</Text>
+        <Text style={styles.text}>{name}</Text>
         <Text style={styles.numbered_list}>
           This Questionnaire is being distributed to certain individuals and
           entities which may be offered the opportunity to purchase securities
-          (the “Securities”) by [[DAO LLC Name]], a Delaware limited liability
-          company (the “Company”). The purpose of this Questionnaire is to
-          assure the Company that all such offers and purchases will meet the
-          standards imposed by the Securities Act of 1933, as amended (the
-          “Act”), and applicable state securities laws.
+          (the “Securities”) by {name}
+          , a Delaware limited liability company (the “Company”). The purpose of
+          this Questionnaire is to assure the Company that all such offers and
+          purchases will meet the standards imposed by the Securities Act of
+          1933, as amended (the “Act”), and applicable state securities laws.
           <Br />
           <Br />
           All answers will be kept confidential. However, by signing this
@@ -2622,43 +2616,46 @@ const DelawareInvestmentClubTemplate = () => {
         </Text>
         <Text style={styles.text}>RISK FACTORS</Text>
         <Text style={styles.numbered_list}>
-          Becoming a member of [[DAO LLC Name]] involves a high degree of risk.
-          You should carefully consider the risks we describe below, along with
-          all of the other information set forth herein and in the Operating
-          Agreement of [[DAO LLC Name]] (the Agreement), before deciding to
-          contribute capital to, acquire membership interests in and participate
-          in the governance of [[DAO LLC Name]]. The risks and uncertainties
-          described below are those significant risk factors, currently known
-          and specific to us, which we believe are relevant to contributing
-          capital to, acquiring membership interests in and participating in the
-          governance of [[DAO LLC Name]]. If any of these risks materialize, our
-          business, results of operations or financial condition could suffer,
-          the value of the membership interests could decline substantially and
-          you could lose part or all of your capital contributed to [[DAO LLC
-          Name]]. Additional risks and uncertainties not currently known to us
-          or that we now deem immaterial may also harm us and adversely affect
-          your investment or participation in [[DAO LLC Name]].
+          Becoming a member of {name}
+          involves a high degree of risk. You should carefully consider the
+          risks we describe below, along with all of the other information set
+          forth herein and in the Operating Agreement of {name}
+          (the Agreement), before deciding to contribute capital to, acquire
+          membership interests in and participate in the governance of {name}.
+          The risks and uncertainties described below are those significant risk
+          factors, currently known and specific to us, which we believe are
+          relevant to contributing capital to, acquiring membership interests in
+          and participating in the governance of {name}. If any of these risks
+          materialize, our business, results of operations or financial
+          condition could suffer, the value of the membership interests could
+          decline substantially and you could lose part or all of your capital
+          contributed to {name}. Additional risks and uncertainties not
+          currently known to us or that we now deem immaterial may also harm us
+          and adversely affect your investment or participation in {name}
+          .
           <Br />
           <Br />
-          You may lose all of the capital that you contribute to [[DAO LLC
-          Name]]. If you are uncertain as to our business and operations or you
-          are not prepared to lose all capital you contributed to [[DAO LLC
-          Name]] in exchange for membership interests, we strongly urge you not
-          to become a member. We recommend you consult legal, financial, tax and
-          other professional advisors or experts for further guidance before
-          seeking to become a member of [[DAO LLC Name]] and contribute capital
-          to [[DAO LLC Name]]. Further, we recommend you consult independent
-          legal advice in respect of the legality of becoming a member in [[DAO
-          LLC Name]] and participating in the governance of [[DAO LLC Name]].
+          You may lose all of the capital that you contribute to {name}. If you
+          are uncertain as to our business and operations or you are not
+          prepared to lose all capital you contributed to {name} in exchange for
+          membership interests, we strongly urge you not to become a member. We
+          recommend you consult legal, financial, tax and other professional
+          advisors or experts for further guidance before seeking to become a
+          member of {name}
+          and contribute capital to {name}. Further, we recommend you consult
+          independent legal advice in respect of the legality of becoming a
+          member in {name} and participating in the governance of {name}
+          .
           <Br />
           <Br />
-          In order to become and exercise the rights of a member of [[DAO LLC
-          Name]], you will need to interact with a “smart contract” or
-          persistent executable code on the [[Designated Blockchain]] blockchain
-          network. We do not recommend that you attempt to become a member of
-          [[DAO LLC Name]] unless you have prior experience with cryptographic
-          tokens, blockchain-based software and distributed ledger technology
-          and unless you have received independent professional advice.
+          In order to become and exercise the rights of a member of {name}, you
+          will need to interact with a “smart contract” or persistent executable
+          code on the {chain} blockchain network. We do not recommend that you
+          attempt to become a member of
+          {name}
+          unless you have prior experience with cryptographic tokens,
+          blockchain-based software and distributed ledger technology and unless
+          you have received independent professional advice.
           <Br />
           <Br />
           Capitalized terms used but not defined herein have the definitions
@@ -2669,16 +2666,18 @@ const DelawareInvestmentClubTemplate = () => {
           1. BUSINESS/OPERATIONAL RISKS
           <Br />
           <Br />
-          [[DAO LLC Name]] has no operating history. [[DAO LLC Name]] may need
-          to raise additional capital in the future to continue operations,
-          which may not be available on acceptable terms, or at all.
+          {name}
+          has no operating history. {name}
+          may need to raise additional capital in the future to continue
+          operations, which may not be available on acceptable terms, or at all.
           <Br />
           <Br />
-          [[DAO LLC Name]] is a recently formed company established under the
-          laws of the State of Delaware with minimal activity and no historical
-          operating results. There is no guarantee that [[DAO LLC Name]] will be
-          able to raise any additional capital in the future or that additional
-          capital will be available on acceptable terms. [[DAO LLC Name]]
+          {name}
+          is a recently formed company established under the laws of the State
+          of Delaware with minimal activity and no historical operating results.
+          There is no guarantee that {name}
+          will be able to raise any additional capital in the future or that
+          additional capital will be available on acceptable terms. {name}
           generally lacks any ability to raise certain kinds of capital (e.g.,
           debt) and may not have the ability to finance capital expenditures or
           finance strategic initiatives.
@@ -2699,51 +2698,57 @@ const DelawareInvestmentClubTemplate = () => {
           substantial portion of their investment.
           <Br />
           <Br />
-          [[DAO LLC Name]] may be unable to recover assets for which the
-          associated cryptographic key is lost, stolen, or destroyed. Stolen
-          cryptographic keys may be used to improperly influence [[DAO LLC
-          Name]]’s activities.
+          {name}
+          may be unable to recover assets for which the associated cryptographic
+          key is lost, stolen, or destroyed. Stolen cryptographic keys may be
+          used to improperly influence {name}’s activities.
           <Br />
           <Br />
           Responsibility for the safekeeping of digital assets including the
           cryptographic keys associated with blockchain-based assets rests
-          solely on the individual Members. [[DAO LLC Name]] is generally
-          incapable of recovering any assets associated with a lost or destroyed
-          cryptographic key. Such loss or destruction would result in the total
-          loss of any investment in [[DAO LLC Name]].
+          solely on the individual Members. {name}
+          is generally incapable of recovering any assets associated with a lost
+          or destroyed cryptographic key. Such loss or destruction would result
+          in the total loss of any investment in {name}
+          .
           <Br />
           <Br />
           In the event a cryptographic key is stolen or duplicated, the thief
-          may gain access to assets of [[DAO LLC Name]], including the ability
-          to create or approve new proposals related to [[DAO LLC Name]]’s
-          business. This may have a material adverse effect on an investment in
-          [[DAO LLC Name]].
+          may gain access to assets of {name}, including the ability to create
+          or approve new proposals related to {name}
+          ’s business. This may have a material adverse effect on an investment
+          in
+          {name}
+          .
           <Br />
           <Br />
-          [[DAO LLC Name]] may suffer from misaligned incentives, adverse
-          selection, and related effects through the operation of Designated
-          Smart Contracts and inapplicability of fiduciary duties.
+          {name}
+          may suffer from misaligned incentives, adverse selection, and related
+          effects through the operation of Designated Smart Contracts and
+          inapplicability of fiduciary duties.
           <Br />
           <Br />
-          [[DAO LLC Name]] is designed to coordinate its operations through its
-          Members’ individual economic incentives. Individual Members are
-          expected to source investment opportunities and conduct required due
-          diligence.
+          {name}
+          is designed to coordinate its operations through its Members’
+          individual economic incentives. Individual Members are expected to
+          source investment opportunities and conduct required due diligence.
           <Br />
           <Br />
           However, it is possible that the incentive structure produced by the
           Designated Smart Contracts may ultimately impede effective
           coordination of the Members. Members are not subject to fiduciary
-          duties to one another or to [[DAO LLC Name]]. As such, Members may
-          retain favorable investment opportunities for themselves, or cause
-          [[DAO LLC Name]] to make unfavorable investments or disbursements.
-          Members may also promote investment opportunities in which they have
-          significant, independent financial stakes. For example, a Member
-          holding large quantities of a specific type of token or other
-          investment asset may promote investments which would not be expected
-          to accrue value for other Members, but which would increase the value
-          of such token or other investment asset. This may have a material
-          adverse effect on an investment in [[DAO LLC Name]].
+          duties to one another or to {name}. As such, Members may retain
+          favorable investment opportunities for themselves, or cause
+          {name}
+          to make unfavorable investments or disbursements. Members may also
+          promote investment opportunities in which they have significant,
+          independent financial stakes. For example, a Member holding large
+          quantities of a specific type of token or other investment asset may
+          promote investments which would not be expected to accrue value for
+          other Members, but which would increase the value of such token or
+          other investment asset. This may have a material adverse effect on an
+          investment in {name}
+          .
           <Br />
           <Br />
           Liquidated assets may lose value or become unmarketable.
@@ -2753,24 +2758,28 @@ const DelawareInvestmentClubTemplate = () => {
           pro-rated distribution of
           <Br />
           <Br />
-          [[DAO LLC Name]]’s assets, those assets may subsequently lose value or
-          become illiquid or unmarketable due to market conditions or legal
-          requirements. This may have a material adverse effect on an investment
-          in [[DAO LLC Name]].
+          {name}
+          ’s assets, those assets may subsequently lose value or become illiquid
+          or unmarketable due to market conditions or legal requirements. This
+          may have a material adverse effect on an investment in {name}
+          .
           <Br />
           <Br />
-          [[DAO LLC Name]]’s governance functions, including Designated Smart
-          Contracts, may become captured by a hostile Member or group of
-          Members. [[DAO LLC Name]]’s governance is primarily executed through
-          its Designated Smart Contracts and the votes of its Members. It is
-          possible that an individual Member or group of Members (the
-          “attackers”) may cause [[DAO LLC Name]] to issue new Membership
-          Interests (whether in the form of Shares or similar interests) or
-          otherwise approve proposals for the benefit of the attackers. This may
-          result in the dilution of other Members’ investments in [[DAO LLC
-          Name]], misappropriation of the assets of [[DAO LLC Name]], or other
-          harms which may have a material adverse effect on an investment in
-          [[DAO LLC Name]].
+          {name}
+          ’s governance functions, including Designated Smart Contracts, may
+          become captured by a hostile Member or group of Members. {name}
+          ’s governance is primarily executed through its Designated Smart
+          Contracts and the votes of its Members. It is possible that an
+          individual Member or group of Members (the “attackers”) may cause{" "}
+          {name}
+          to issue new Membership Interests (whether in the form of Shares or
+          similar interests) or otherwise approve proposals for the benefit of
+          the attackers. This may result in the dilution of other Members’
+          investments in {name}, misappropriation of the assets of {name}, or
+          other harms which may have a material adverse effect on an investment
+          in
+          {name}
+          .
           <Br />
           <Br />
           Members may be subject to the GuildKick functionality of Designated
@@ -2778,24 +2787,24 @@ const DelawareInvestmentClubTemplate = () => {
           opportunities.
           <Br />
           <Br />
-          Continued Membership in [[DAO LLC Name]] is conditioned on the ongoing
-          consent of an economic majority of the other Members. A Member may be
-          forcibly removed from [[DAO LLC Name]] through the GuildKick
-          functionality of the Designated Smart Contracts. In this event, the
-          ejected Member will receive a pro-rated distribution of [[DAO LLC
-          Name]]’s assets, but will forfeit any ability to influence or
-          participate in future investment decisions of [[DAO LLC Name]].
+          Continued Membership in {name}
+          is conditioned on the ongoing consent of an economic majority of the
+          other Members. A Member may be forcibly removed from {name}
+          through the GuildKick functionality of the Designated Smart Contracts.
+          In this event, the ejected Member will receive a pro-rated
+          distribution of {name}’s assets, but will forfeit any ability to
+          influence or participate in future investment decisions of {name}.
           Depending on the availability of present or subsequent investment
           opportunities at that time, an ejected Member may ultimately be
           required to forego favorable investment opportunities. The ongoing
           possibility of such ejection constitutes a material risk of investment
-          in [[DAO LLC Name]].
+          in {name}
+          .
           <Br />
           <Br />
-          Oracles used to determine the exchange rate or value of [[DAO LLC
-          Name]]’s assets may become captured or otherwise manipulated to
-          provide false information that could be exploited by a Member or
-          external adversary.
+          Oracles used to determine the exchange rate or value of {name}’s
+          assets may become captured or otherwise manipulated to provide false
+          information that could be exploited by a Member or external adversary.
           <Br />
           <Br />
           The Designated Smart Contracts, or smart contracts on which the
@@ -2804,50 +2813,54 @@ const DelawareInvestmentClubTemplate = () => {
           rates or to maintain price stability of an asset. It is possible that
           an entity could capture or manipulate an oracle to inject false
           information. The ongoing possibility of an Oracle producing such false
-          information constitutes a material risk of investment in [[DAO LLC
-          Name]].
+          information constitutes a material risk of investment in {name}.
           <Br />
           <Br />
           Addition or subtraction of new Members may dilute the ownership
-          interests of existing Members in [[DAO LLC Name]]’s assets.
+          interests of existing Members in {name}
+          ’s assets.
           <Br />
           <Br />
-          It is possible to acquire Membership Interests in [[DAO LLC Name]] for
-          a range of types and amounts of other assets. Accordingly, acceptance
-          of a new Member may change the overall kind and number of assets
-          beneficially owned by individual Members. This may result in the
-          dilution of other Members’ investments in [[DAO LLC Name]] or other
-          harms which may have a material adverse effect on an investment in
-          [[DAO LLC Name]].
+          It is possible to acquire Membership Interests in {name}
+          for a range of types and amounts of other assets. Accordingly,
+          acceptance of a new Member may change the overall kind and number of
+          assets beneficially owned by individual Members. This may result in
+          the dilution of other Members’ investments in {name}
+          or other harms which may have a material adverse effect on an
+          investment in
+          {name}
+          .
           <Br />
           <Br />
-          Entities receiving investment or funding from [[DAO LLC Name]] are not
-          under the control of [[DAO LLC Name]]. Such projects may act in a
-          manner adverse to [[DAO LLC Name]] or its Members.
+          Entities receiving investment or funding from {name}
+          are not under the control of {name}. Such projects may act in a manner
+          adverse to {name}
+          or its Members.
           <Br />
           <Br />
-          [[DAO LLC Name]] is unlikely to have effective control over any
-          individuals or entities. There is no guarantee that an entity funded
-          by [[DAO LLC Name]] will act in accordance with any funding agreement.
-          Material risks include, but are not limited to, any of the following:
+          {name}
+          is unlikely to have effective control over any individuals or
+          entities. There is no guarantee that an entity funded by {name}
+          will act in accordance with any funding agreement. Material risks
+          include, but are not limited to, any of the following:
           <Br />
           <Br />
           • <Indent /> the entity may attempt to raise additional funding from
-          other sources, causing dilution of [[DAO LLC Name]]’s investment;
+          other sources, causing dilution of {name}
+          ’s investment;
           <Br />
           <Br />
           • <Indent /> the entity may issue different cryptographic tokens or
-          assets, in addition to or in lieu of assets owed to [[DAO LLC Name]];
-          or
+          assets, in addition to or in lieu of assets owed to {name}
+          ; or
           <Br />
           <Br />
           • <Indent /> the entity may not deliver any cryptographic tokens or
           assets.
           <Br />
           <Br />
-          Accordingly, the decisions or actions of entities funded by [[DAO LLC
-          Name]] may have a material adverse effect on an investment in [[DAO
-          LLC Name]].
+          Accordingly, the decisions or actions of entities funded by {name} may
+          have a material adverse effect on an investment in {name}.
           <Br />
           <Br />
           Members may not perform adequate or uniform due diligence.
@@ -2861,7 +2874,8 @@ const DelawareInvestmentClubTemplate = () => {
           Members may apply incomplete or inconsistent due diligence procedures,
           which could result in the improper assessment of risks attending such
           investments. This may have a material adverse effect on an investment
-          in [[DAO LLC Name]].
+          in {name}
+          .
           <Br />
           <Br />
           Members may not effectively source investment opportunities compared
@@ -2870,117 +2884,134 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           Members are responsible for sourcing investment opportunities. Members
           may not have the necessary expertise, position, or incentive to
-          identify and negotiate investment opportunities on behalf of [[DAO LLC
-          Name]]. It is possible that Members will be unable to identify
-          favorable investment opportunities, which may have a material adverse
-          effect on an investment in [[DAO LLC Name]].
+          identify and negotiate investment opportunities on behalf of {name}.
+          It is possible that Members will be unable to identify favorable
+          investment opportunities, which may have a material adverse effect on
+          an investment in {name}
+          .
           <Br />
           <Br />
-          Additionally, [[DAO LLC Name]] expects intense competition for limited
-          investment opportunities. Competitors may include investment companies
-          and investment advisers including pension funds and hedge funds,
-          technology firms, and others. These competitors may have fewer
-          financial, legal, and technological constraints. They may also have
-          greater name recognition or established good will. [[DAO LLC Name]]’s
-          ability to compete will depend on the capabilities and actions of its
-          Members, for which [[DAO LLC Name]] can offer no assurances.
+          Additionally, {name}
+          expects intense competition for limited investment opportunities.
+          Competitors may include investment companies and investment advisers
+          including pension funds and hedge funds, technology firms, and others.
+          These competitors may have fewer financial, legal, and technological
+          constraints. They may also have greater name recognition or
+          established good will. {name}
+          ’s ability to compete will depend on the capabilities and actions of
+          its Members, for which {name}
+          can offer no assurances.
           <Br />
           <Br />
-          [[DAO LLC Name]] does not have D&O indemnification or other insurance,
-          does not intend to seek such insurance and may be unable to obtain
-          such insurance on commercially reasonable terms. Consequently, [[DAO
-          LLC Name]] itself or its members could be exposed to losses.
+          {name}
+          does not have D&O indemnification or other insurance, does not intend
+          to seek such insurance and may be unable to obtain such insurance on
+          commercially reasonable terms. Consequently, {name} itself or its
+          members could be exposed to losses.
           <Br />
           <Br />
-          [[DAO LLC Name]] does not have and does not presently intend to seek
-          insurance that would cover Members against claims for damages by third
-          parties other Members or by [[DAO LLC Name]], or that would cover
-          [[DAO LLC Name]] against claims for damages by Members or third
-          parties. In the event that Members wished to obtain such insurance,
-          such insurance may not be available on commercially reasonable terms,
-          due to the novel governance features of [[DAO LLC Name]].
-          Consequently, in the event that Members or [[DAO LLC Name]] face such
-          litigation, insurance will not be available, and any losses suffered
-          by Members or [[DAO LLC Name]] will be uninsured.
+          {name}
+          does not have and does not presently intend to seek insurance that
+          would cover Members against claims for damages by third parties other
+          Members or by {name}, or that would cover
+          {name}
+          against claims for damages by Members or third parties. In the event
+          that Members wished to obtain such insurance, such insurance may not
+          be available on commercially reasonable terms, due to the novel
+          governance features of {name}. Consequently, in the event that Members
+          or {name}
+          face such litigation, insurance will not be available, and any losses
+          suffered by Members or {name}
+          will be uninsured.
           <Br />
           <Br />
           2. LEGAL/REGULATORY RISK
           <Br />
           <Br />
           It is intended that the Members who hold Shares be general partners in
-          [[DAO LLC Name]] for securities law purposes, as a result of which
-          [[DAO LLC Name]] Members will not have the protections of the
-          securities laws in purchasing or divesting themselves of their Shares.
+          {name}
+          for securities law purposes, as a result of which
+          {name}
+          Members will not have the protections of the securities laws in
+          purchasing or divesting themselves of their Shares.
           <Br />
           <Br />
-          Although [[DAO LLC Name]] is a company and thus not a “general
-          partnership” under U.S. state laws regarding unincorporated
-          associations, Members who hold Shares have the rights, powers and
-          responsibilities of general managers of [[DAO LLC Name]], have the
-          right to vote on all decisions of [[DAO LLC Name]], and may exit
-          freely prior to the implementation of proposals they voted against.
-          Accordingly, for securities law purposes, it is intended that Members
-          holding shares be viewed as general partners of one another in the
-          management of [[DAO LLC Name]]. A general partnership interest is
-          generally presumed not to be a security under the U.S. federal
-          securities acts; accordingly, [[DAO LLC Name]] Members may not, and
-          should assume that they do not, have the protections of the U.S.
-          federal securities laws in their investment decision to acquire or
-          divest themselves of Shares. As a result, [[DAO LLC Name]] Members
-          will not have the remedies against [[DAO LLC Name]] that would be
-          available if Shares were securities—such as a right of rescission for
-          failure to register the offering of Shares.
+          Although {name}
+          is a company and thus not a “general partnership” under U.S. state
+          laws regarding unincorporated associations, Members who hold Shares
+          have the rights, powers and responsibilities of general managers of{" "}
+          {name}, have the right to vote on all decisions of {name}, and may
+          exit freely prior to the implementation of proposals they voted
+          against. Accordingly, for securities law purposes, it is intended that
+          Members holding shares be viewed as general partners of one another in
+          the management of {name}. A general partnership interest is generally
+          presumed not to be a security under the U.S. federal securities acts;
+          accordingly, {name}
+          Members may not, and should assume that they do not, have the
+          protections of the U.S. federal securities laws in their investment
+          decision to acquire or divest themselves of Shares. As a result,{" "}
+          {name}
+          Members will not have the remedies against {name}
+          that would be available if Shares were securities—such as a right of
+          rescission for failure to register the offering of Shares.
           <Br />
           <Br />
           It is possible that Members may, individually or collectively, cause
-          [[DAO LLC Name]] to require registration under the Investment Company
-          Act of 1940, with which [[DAO LLC Name]] would be unable to comply.
+          {name}
+          to require registration under the Investment Company Act of 1940, with
+          which {name}
+          would be unable to comply.
           <Br />
           <Br />
           The Investment Company Act of 1940 exempts from registration entities
           with fewer than 100 beneficial owners of securities held by the
-          entity. Although [[DAO LLC Name]] is designed not to be or become an
-          entity required to register as an “investment company”, it is possible
-          that Members may act outside the limitations established by the
-          Grimoire and Designated Smart Contracts. A Member may, for example,
-          transfer control of a Designated Blockchain Network Account Address to
-          another natural person or group of natural persons, in violation of
-          the Grimoire’s prohibition on such actions, thereby triggering
-          registration requirements under the Investment Company Act.
+          entity. Although {name}
+          is designed not to be or become an entity required to register as an
+          “investment company”, it is possible that Members may act outside the
+          limitations established by the Grimoire and Designated Smart
+          Contracts. A Member may, for example, transfer control of a Designated
+          Blockchain Network Account Address to another natural person or group
+          of natural persons, in violation of the Grimoire’s prohibition on such
+          actions, thereby triggering registration requirements under the
+          Investment Company Act.
           <Br />
           <Br />
           In the event registration is required, it may be impossible or
-          infeasible for [[DAO LLC Name]] to comply with relevant laws and
-          regulations pertaining to the registration, recordkeeping, and
-          oversight of [[DAO LLC Name]]. In addition, it may not be possible for
-          [[DAO LLC Name]] to become aware of such an event, so that Members may
-          not be able to RageQuit in order to avoid liability for violations of
-          the Investment Company Act. This could have a material adverse effect
-          on an investment in [[DAO LLC Name]].
+          infeasible for {name}
+          to comply with relevant laws and regulations pertaining to the
+          registration, recordkeeping, and oversight of {name}. In addition, it
+          may not be possible for
+          {name}
+          to become aware of such an event, so that Members may not be able to
+          RageQuit in order to avoid liability for violations of the Investment
+          Company Act. This could have a material adverse effect on an
+          investment in {name}
+          .
           <Br />
           <Br />
-          [[DAO LLC Name]] may inadvertently issue non-voting shares triggering
-          regulatory requirements under the Investment Advisers Act that [[DAO
-          LLC Name]] may be unable to comply with.
+          {name}
+          may inadvertently issue non-voting shares triggering regulatory
+          requirements under the Investment Advisers Act that {name} may be
+          unable to comply with.
           <Br />
           <Br />
           The Investment Advisers Act of 1940 requires the registration, or
           exemption from registration, any entity that engages in the business
           of advising others as to the value or advisability of investing in,
-          purchasing, or selling securities. Members of [[DAO LLC Name]] may
-          cause the issuance of non-voting shares which may cause [[DAO LLC
-          Name]] to be subject to the Investment Advisers Act. The Investment
-          Advisers Act may impose restrictions on the activities of [[DAO LLC
-          Name]], including substantive prohibitions, contractual requirements,
-          recordkeeping requirements, and regulatory oversight and examination.
+          purchasing, or selling securities. Members of {name}
+          may cause the issuance of non-voting shares which may cause {name} to
+          be subject to the Investment Advisers Act. The Investment Advisers Act
+          may impose restrictions on the activities of {name}, including
+          substantive prohibitions, contractual requirements, recordkeeping
+          requirements, and regulatory oversight and examination.
           <Br />
           <Br />
-          In such an event, [[DAO LLC Name]]’s compliance with the Investment
-          Advisers Act may be impossible or infeasible, and may require
-          extraordinary response up to and including liquidation of [[DAO LLC
-          Name]]. It may be impossible for [[DAO LLC Name]] produce a faithful
-          disclosure of material facts or conflicts of interest. It may be
-          impossible to prevent principal transactions.
+          In such an event, {name}
+          ’s compliance with the Investment Advisers Act may be impossible or
+          infeasible, and may require extraordinary response up to and including
+          liquidation of {name}. It may be impossible for {name}
+          produce a faithful disclosure of material facts or conflicts of
+          interest. It may be impossible to prevent principal transactions.
           <Br />
           <Br />
           Sales of Shares may be securities transactions requiring registration.
@@ -2988,23 +3019,24 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           The Securities Act of 1933 requires that securities transactions be
           registered with the Securities and Exchange Commission. The sale of
-          Shares or other assets of [[DAO LLC Name]] may be deemed securities
-          transactions requiring registration unless subject to an exemption
-          from registration.
+          Shares or other assets of {name}
+          may be deemed securities transactions requiring registration unless
+          subject to an exemption from registration.
           <Br />
           <Br />
-          In such an event, it may be impossible or infeasible for [[DAO LLC
-          Name]] to comply with regulatory requirements associated with these
-          securities transactions, which could have a material adverse effect on
-          an investment in [[DAO LLC Name]].
+          In such an event, it may be impossible or infeasible for {name} to
+          comply with regulatory requirements associated with these securities
+          transactions, which could have a material adverse effect on an
+          investment in {name}
+          .
           <Br />
           <Br />
           Shares may not be tradeable on secondary markets.
           <Br />
           <Br />
           In order to preserve exemptions from registration under the Securities
-          Act and Investment Company Act, Shares of [[DAO LLC Name]] may
-          generally not be traded. The ability of Members to dispose of the
+          Act and Investment Company Act, Shares of {name}
+          may generally not be traded. The ability of Members to dispose of the
           Shares may be limited to redemption of Shares through the RageQuit
           function of the Designated Smart Contracts. Any such liquidation would
           distribute Org assets to the exiting Member in kind. Both Shares and
@@ -3013,66 +3045,75 @@ const DelawareInvestmentClubTemplate = () => {
           investment.
           <Br />
           <Br />
-          As a result of its reliance on the Designated Smart Contracts, [[DAO
-          LLC Name]] or one of its Members may become subject to a legal order
-          or other requirement that permanently or temporarily prohibits or
-          restrains [[DAO LLC Name]] from executing a function it would
-          otherwise reasonably be expected to execute, or that mandates or
-          directs [[DAO LLC Name]] to take an action it would otherwise not
-          reasonably be expected to perform, which [[DAO LLC Name]] or such
-          Member may be incapable of complying with.
+          As a result of its reliance on the Designated Smart Contracts, {
+            name
+          }{" "}
+          or one of its Members may become subject to a legal order or other
+          requirement that permanently or temporarily prohibits or restrains{" "}
+          {name}
+          from executing a function it would otherwise reasonably be expected to
+          execute, or that mandates or directs {name}
+          to take an action it would otherwise not reasonably be expected to
+          perform, which {name}
+          or such Member may be incapable of complying with.
           <Br />
           <Br />
           As a result of its reliance on the Designated Smart Contracts, which
-          cannot be modified after they are deployed, [[DAO LLC Name]] or one of
-          its Members may become subject to a legal order or other requirement
-          for which compliance is impossible or infeasible. [[DAO LLC Name]] may
-          not have Member or agent capable of executing a legal order or
+          cannot be modified after they are deployed, {name}
+          or one of its Members may become subject to a legal order or other
+          requirement for which compliance is impossible or infeasible. {name}
+          may not have Member or agent capable of executing a legal order or
           requirement. Noncompliance could result in legal liability that would
-          have a material adverse effect on an investment in [[DAO LLC Name]].
+          have a material adverse effect on an investment in {name}
+          .
           <Br />
           <Br />
-          [[DAO LLC Name]] may be deemed a Money Services Business requiring
-          State and Federal supervision, which [[DAO LLC Name]] may be incapable
-          of complying with.
+          {name}
+          may be deemed a Money Services Business requiring State and Federal
+          supervision, which {name}
+          may be incapable of complying with.
           <Br />
           <Br />
           The Bank Secrecy Act imposes a requirement for money transmitters and
           other money services businesses (MSBs) to be licensed and supervised
           by the States in which they operate. It is possible that the
           investment of money in blockchain-mediated ventures, or the operation
-          of [[DAO LLC Name]]’s Designated Smart Contracts in conjunction with
-          the actions of [[DAO LLC Name]] or its individual Members, may
-          constitute money transmission subject to licensure and supervision. In
-          particular, the Trade functionality of the Designated Smart Contracts
-          may be deemed exchange or transmission of money subject to State and
-          Federal regulation.
+          of {name}
+          ’s Designated Smart Contracts in conjunction with the actions of{" "}
+          {name}
+          or its individual Members, may constitute money transmission subject
+          to licensure and supervision. In particular, the Trade functionality
+          of the Designated Smart Contracts may be deemed exchange or
+          transmission of money subject to State and Federal regulation.
           <Br />
           <Br />
           Compliance with such licensure and supervision requirements would
-          likely be impossible or infeasible, subjecting [[DAO LLC Name]] to
-          legal liability. In particular, it may be impossible to maintain and
-          implement required compliance programs including anti-money-laundering
-          (AML) policies or participation in regulatory examinations.
-          Noncompliance could result in legal liability that would have a
-          material adverse effect on an investment in [[DAO LLC Name]].
+          likely be impossible or infeasible, subjecting {name}
+          to legal liability. In particular, it may be impossible to maintain
+          and implement required compliance programs including
+          anti-money-laundering (AML) policies or participation in regulatory
+          examinations. Noncompliance could result in legal liability that would
+          have a material adverse effect on an investment in {name}
+          .
           <Br />
           <Br />
           It may be impossible or infeasible to enforce legal agreements,
-          remedies, or orders against [[DAO LLC Name]] or its Members due to the
-          nature of blockchain technology.
+          remedies, or orders against {name}
+          or its Members due to the nature of blockchain technology.
           <Br />
           <Br />
-          Nearly all actions and decisions of [[DAO LLC Name]] are mediated by
-          blockchain technology. Generally, blockchain technology does not
-          permit any action not within a specific set of parameters granted by
-          the possession of a cryptographic key. Although [[DAO LLC Name]] is a
-          legal entity subject to the laws and courts of applicable
+          Nearly all actions and decisions of {name}
+          are mediated by blockchain technology. Generally, blockchain
+          technology does not permit any action not within a specific set of
+          parameters granted by the possession of a cryptographic key. Although{" "}
+          {name}
+          is a legal entity subject to the laws and courts of applicable
           jurisdictions, it may be impossible to enforce some legal agreements,
-          remedies, or other orders against [[DAO LLC Name]] or individual
-          Members due to the inherent limitations of blockchain technology. This
-          may have a material adverse effect on the legal rights of a Member or
-          third party, or on an investment in [[DAO LLC Name]].
+          remedies, or other orders against {name}
+          or individual Members due to the inherent limitations of blockchain
+          technology. This may have a material adverse effect on the legal
+          rights of a Member or third party, or on an investment in {name}
+          .
           <Br />
           <Br />
           3. BLOCKCHAIN RISK
@@ -3086,13 +3127,15 @@ const DelawareInvestmentClubTemplate = () => {
           open source project is not represented, maintained or monitored by an
           official organization or authority. Because of the nature of
           open-source software projects, it may be easier for third parties not
-          affiliated with [[DAO LLC Name]] to introduce software vulnerabilities
-          or bugs into the core infrastructure elements of the blockchain
-          network. This could result in the corruption or exploitation of the
-          open-source code including but not limited to Consensus Attacks,
-          changes to Consensus Rules, or blockchain reorganizations, which may
-          result in the loss or theft of blockchain-based assets and have a
-          material adverse effect on an investment in [[DAO LLC Name]].
+          affiliated with {name}
+          to introduce software vulnerabilities or bugs into the core
+          infrastructure elements of the blockchain network. This could result
+          in the corruption or exploitation of the open-source code including
+          but not limited to Consensus Attacks, changes to Consensus Rules, or
+          blockchain reorganizations, which may result in the loss or theft of
+          blockchain-based assets and have a material adverse effect on an
+          investment in {name}
+          .
           <Br />
           <Br />
           Similarly, it is possible that a software bug results in or permits
@@ -3100,14 +3143,16 @@ const DelawareInvestmentClubTemplate = () => {
           or the unauthorized use of an administrative function of a Designated
           Smart Contract, which may result in the loss or theft of
           blockchain-based assets and have a material adverse effect on an
-          investment in [[DAO LLC Name]].
+          investment in {name}
+          .
           <Br />
           <Br />
           Blockchain networks may be the target of malicious attacks seeking to
           identify and exploit weaknesses in the software. Such events may
           result in a loss of trust in the security and operation of blockchain
           networks and a decline in user activity which could have a negative
-          impact on [[DAO LLC Name]] and its investments.
+          impact on {name}
+          and its investments.
           <Br />
           <Br />
           Investments may be rendered valueless due to the open-source nature of
@@ -3116,19 +3161,19 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           The majority of software operating on blockchain networks is open
           source, which generally allows third parties to produce modified
-          duplicates of the software. To the extent [[DAO LLC Name]] funds the
-          development of such software, it is possible that a third party may
-          release competing software or modify the software to remove
+          duplicates of the software. To the extent {name}
+          funds the development of such software, it is possible that a third
+          party may release competing software or modify the software to remove
           profit-generating mechanisms built into the original software. This
-          may have a material adverse effect on an investment in [[DAO LLC
-          Name]].
+          may have a material adverse effect on an investment in {name}.
           <Br />
           <Br />
           Blockchain technology is nascent and rapidly changing, and there
           remains minimal use of blockchain networks and blockchain assets in
           the retail and commercial marketplace. The slowing or stopping of the
           development or acceptance of blockchain networks may adversely affect
-          an investment in [[DAO LLC Name]].
+          an investment in {name}
+          .
           <Br />
           <Br />
           The development of blockchain networks is a new and rapidly evolving
@@ -3172,14 +3217,15 @@ const DelawareInvestmentClubTemplate = () => {
           networks and assets.
           <Br />
           <Br />
-          [[DAO LLC Name]]’s business model is dependent on continued investment
-          in and development of the blockchain industry and related
-          technologies. If investments in the blockchain industry become less
-          attractive to investors or innovators and developers, or if blockchain
-          networks and assets do not gain public acceptance or are not adopted
-          and used by a substantial number of individuals, companies and other
-          entities, it could have a material adverse impact on [[DAO LLC
-          Name]]’s prospects and operations.
+          {name}
+          ’s business model is dependent on continued investment in and
+          development of the blockchain industry and related technologies. If
+          investments in the blockchain industry become less attractive to
+          investors or innovators and developers, or if blockchain networks and
+          assets do not gain public acceptance or are not adopted and used by a
+          substantial number of individuals, companies and other entities, it
+          could have a material adverse impact on {name}’s prospects and
+          operations.
           <Br />
           <Br />
           The application of distributed ledger technology is novel and untested
@@ -3199,13 +3245,13 @@ const DelawareInvestmentClubTemplate = () => {
           assets and result in substantial losses to purchasers of Shares.
           <Br />
           <Br />
-          If [[DAO LLC Name]] discovers errors or unexpected functionalities in
-          a Designated Smart Contract after it has been deployed, [[DAO LLC
-          Name]] may make a determination that the Designated Smart Contract is
-          defective and that its use should be discontinued. Members may be
-          unable to rely on [[DAO LLC Name]]’s successful performance of
-          measures intended to restore functionality to defective Designated
-          Smart Contracts.
+          If {name}
+          discovers errors or unexpected functionalities in a Designated Smart
+          Contract after it has been deployed, {name} may make a determination
+          that the Designated Smart Contract is defective and that its use
+          should be discontinued. Members may be unable to rely on {name}
+          ’s successful performance of measures intended to restore
+          functionality to defective Designated Smart Contracts.
           <Br />
           <Br />
           The creation and operation of Designated Smart Contracts will be
@@ -3222,9 +3268,11 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           <Br />
           Risks associated with the distributed ledger technology could affect
-          [[DAO LLC Name]]’s business directly or the market for blockchain
-          assets generally. In either case, the occurrence of these events could
-          have a material adverse effect on an investment in [[DAO LLC Name]].
+          {name}
+          ’s business directly or the market for blockchain assets generally. In
+          either case, the occurrence of these events could have a material
+          adverse effect on an investment in {name}
+          .
           <Br />
           <Br />
           Each blockchain network is dependent upon its users and contributors,
@@ -3246,26 +3294,29 @@ const DelawareInvestmentClubTemplate = () => {
           <Br />
           The security and integrity of blockchain-based assets, including the
           value ascribed to those assets, relies on the integrity of the
-          underlying blockchain networks. [[DAO LLC Name]]’s Designated Smart
-          Contracts are programmed for compatibility with the Ethereum
-          blockchain.
+          underlying blockchain networks. {name}
+          ’s Designated Smart Contracts are programmed for compatibility with
+          the Ethereum blockchain.
           <Br />
           <Br />
           If the awards and fees paid for maintenance of a network are not
           sufficiently high to incentivize ongoing contribution to the network,
           individuals or entities may respond in a way that reduces confidence
           in the blockchain network. To the extent that any miners or validators
-          cease to record transactions, the operations and governance of [[DAO
-          LLC Name]] will also cease. Furthermore, any widespread delays in the
-          recording of transactions could result in a loss of confidence in the
-          blockchain network and its assets. This could have a material adverse
-          effect on an investment in [[DAO LLC Name]], or on [[DAO LLC Name]]
+          cease to record transactions, the operations and governance of {
+            name
+          }{" "}
+          will also cease. Furthermore, any widespread delays in the recording
+          of transactions could result in a loss of confidence in the blockchain
+          network and its assets. This could have a material adverse effect on
+          an investment in {name}, or on {name}
           itself.
           <Br />
           <Br />
           The prices of blockchain-based assets are extremely volatile.
           Fluctuations in the price of Bitcoin, Ether and/or other network
-          tokens could materially and adversely affect [[DAO LLC Name]].
+          tokens could materially and adversely affect {name}
+          .
           <Br />
           <Br />
           The prices of assets such as Bitcoin and Ether have historically been
@@ -3374,15 +3425,15 @@ const DelawareInvestmentClubTemplate = () => {
           Expectations among blockchain network participants that the value of
           such blockchain assets will soon change.
           <Br />
-          <Br />
-          A decrease in the price of a single blockchain asset may cause
+          <Br />A decrease in the price of a single blockchain asset may cause
           volatility in the entire blockchain industry and may affect other
           blockchain assets. For example, a security breach that affects
           investor or user confidence in Ether or Bitcoin may affect the
           industry as a whole and may also cause the price of other blockchain
           assets to fluctuate. The value of blockchain assets and fluctuations
           in the price of blockchain assets could materially and adversely
-          affect any investment in [[DAO LLC Name]].
+          affect any investment in {name}
+          .
           <Br />
           <Br />
           The regulatory regimes governing blockchain technologies, blockchain
@@ -3403,8 +3454,9 @@ const DelawareInvestmentClubTemplate = () => {
           countries have shown that they intend to adopt legislation to regulate
           the sale and use of blockchain assets. Such legislation may vary
           significantly among jurisdictions, which may subject participants in
-          [[DAO LLC Name]] and the greater blockchain marketplace to different
-          and perhaps contradictory requirements.
+          {name}
+          and the greater blockchain marketplace to different and perhaps
+          contradictory requirements.
           <Br />
           <Br />
           New or changing laws and regulations or interpretations of existing
@@ -3420,20 +3472,23 @@ const DelawareInvestmentClubTemplate = () => {
           assets altogether.
           <Br />
           <Br />
-          [[DAO LLC Name]] may be prevented from entering, or may be required to
-          cease operations in, a jurisdiction that makes it illegal or
-          commercially unviable or undesirable to operate in such jurisdiction.
-          Enforcement, or the threat of enforcement, may also drive a critical
-          mass of participants and trading activity away from regulated markets.
-          Although it is impossible to predict the positions that will be taken
-          by certain governments, any regulatory changes affecting blockchain
-          assets could be substantial and materially adverse to the development
-          and growth of [[DAO LLC Name]] and its business.
+          {name}
+          may be prevented from entering, or may be required to cease operations
+          in, a jurisdiction that makes it illegal or commercially unviable or
+          undesirable to operate in such jurisdiction. Enforcement, or the
+          threat of enforcement, may also drive a critical mass of participants
+          and trading activity away from regulated markets. Although it is
+          impossible to predict the positions that will be taken by certain
+          governments, any regulatory changes affecting blockchain assets could
+          be substantial and materially adverse to the development and growth of{" "}
+          {name}
+          and its business.
           <Br />
           <Br />
           The extent to which blockchain assets are used or perceived to fund
           criminal or terrorist enterprises or launder the proceeds of illegal
-          activities could materially impact [[DAO LLC Name]].
+          activities could materially impact {name}
+          .
           <Br />
           <Br />
           The potential, or perceived potential, for anonymity in transfers of
@@ -3455,23 +3510,25 @@ const DelawareInvestmentClubTemplate = () => {
           know-your-customer and anti-money laundering practices.
           <Br />
           <Br />
-          [[DAO LLC Name]] may not be able to prevent illegal activity from
-          occurring using the Designated Smart Contracts. [[DAO LLC Name]] may
-          be unable to detect the unauthorized use of a KYC/AML whitelisted
-          Member address. Further, [[DAO LLC Name]] may be unable to verify
-          whether cryptographic keys for wallets containing Shares have been
-          transferred to third parties who have not completed the required
-          KYC/AML process. Although [[DAO LLC Name]] plans to implement
-          compliance procedures for KYC/AML obligations, [[DAO LLC Name]] may
-          not be successful in deterring or identifying illegal activity.
+          {name}
+          may not be able to prevent illegal activity from occurring using the
+          Designated Smart Contracts. {name}
+          may be unable to detect the unauthorized use of a KYC/AML whitelisted
+          Member address. Further, {name}
+          may be unable to verify whether cryptographic keys for wallets
+          containing Shares have been transferred to third parties who have not
+          completed the required KYC/AML process. Although {name}
+          plans to implement compliance procedures for KYC/AML obligations,{" "}
+          {name}
+          may not be successful in deterring or identifying illegal activity.
           <Br />
           <Br />
           The use of blockchain assets for illegal purposes, or the perception
           of such use, could result in significant legal and financial exposure,
-          damage to [[DAO LLC Name]]’s reputation, damage to the reputation of
-          blockchain assets generally, and a loss of confidence in the services
-          provided by [[DAO LLC Name]] and the blockchain industry and community
-          as a whole.
+          damage to {name}
+          ’s reputation, damage to the reputation of blockchain assets
+          generally, and a loss of confidence in the services provided by {name}
+          and the blockchain industry and community as a whole.
           <Br />
           <Br />
         </Text>

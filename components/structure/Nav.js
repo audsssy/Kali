@@ -9,6 +9,7 @@ import Kali from "./Kali";
 import KaliMobile from "./KaliMobile";
 import Account from "./Account";
 import Chain from "./Chain";
+import DraftDoc from "../tools/DraftDoc";
 
 export default function Nav() {
   const value = useContext(AppContext);
@@ -17,10 +18,11 @@ export default function Nav() {
     <HStack p={5}>
       {isBrowser == true ? <Kali /> : null}
       <Spacer />
+      <DraftDoc />
       <Chain />
       <Account message="Connect" />
       <DarkModeSwitch />
       <Hamburger />
     </HStack>
-  );
+  )
 }

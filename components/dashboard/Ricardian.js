@@ -6,7 +6,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer"
 import RicardianTemplate from "../../legal/formation/llc/series/RicardianTemplate"
 import DelawareOAtemplate from "../../legal/formation/llc/DelawareOAtemplate"
 import DelawareInvestmentClubTemplate from "../../legal/formation/llc/DelawareInvestmentClubTemplate"
-
+import WyomingOAtemplate from "../../legal/formation/llc/WyomingOAtemplate";
 
 export default function Ricardian() {
   const value = useContext(AppContext);
@@ -61,7 +61,15 @@ export default function Ricardian() {
             <Text>Delaware Operating Agreement: </Text>
             {isClient && (
               <PDFDownloadLink
-                document={<DelawareOAtemplate />}
+                document={
+                  <DelawareOAtemplate
+                    name={"NAME"}
+                    chain={"CHAIN"}
+                    date={"DATE"}
+                    arbitrator={"ARBITRATOR"}
+                    ethAddress={"ETH ADDRESS"}
+                  />
+                }
                 fileName="FORM"
               >
                 {({ loading }) =>
@@ -78,7 +86,42 @@ export default function Ricardian() {
             <Text>Delaware Investment Club Agreement: </Text>
             {isClient && (
               <PDFDownloadLink
-                document={<DelawareInvestmentClubTemplate />}
+                document={
+                  <DelawareInvestmentClubTemplate
+                    name={"NAME"}
+                    chain={"CHAIN"}
+                    client={"CLIENT"}
+                    network={"NETWORK"}
+                    address={"ADDRESS"}
+                    code={"CODE"}
+                    reference={"REFERENCE"}
+                  />
+                }
+                fileName="FORM"
+              >
+                {({ loading }) =>
+                  loading ? (
+                    <button>Loading Document...</button>
+                  ) : (
+                    <button>Download</button>
+                  )
+                }
+              </PDFDownloadLink>
+            )}
+          </ListItem>
+          <ListItem>
+            <Text>Wyoming Operating Agreement: </Text>
+            {isClient && (
+              <PDFDownloadLink
+                document={
+                  <WyomingOAtemplate
+                    name={"NAME"}
+                    date={"DATE"}
+                    email={"EMAIL"}
+                    ethAddress={"ETH ADDRESS"}
+                    id={"ID"}
+                  />
+                }
                 fileName="FORM"
               >
                 {({ loading }) =>
