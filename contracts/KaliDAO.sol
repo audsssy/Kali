@@ -319,7 +319,7 @@ contract KaliDAO is KaliDAOtoken, Multicall, NFThelper, ReentrancyGuard {
             
         address recoveredAddress = ecrecover(digest, v, r, s);
 
-        if (recoveredAddress == address(0) || recoveredAddress != signer) revert InvalidSignature();
+        if (recoveredAddress != signer) revert InvalidSignature();
         
         _vote(signer, proposal, approve);
     }

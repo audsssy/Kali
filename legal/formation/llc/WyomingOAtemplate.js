@@ -89,7 +89,7 @@ const WyomingOAtemplate = ({ name, date, email, ethAddress, id }) => {
         <Text style={styles.text}></Text>
         <Text style={styles.heading2}>WYOMING LLC OPERATING AGREEMENT</Text>
         <Text style={styles.text}>
-          THIS OPERATING AGREEMENT is made and entered into effective as of 
+          THIS OPERATING AGREEMENT is made and entered into effective as of{" "} 
           {date}, by and among the parties indicated on 
           <Text style={{ textDecoration: "underline" }}>Schedule 1</Text> 
           contributing to and managing "{name}", a limited liability company

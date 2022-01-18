@@ -93,7 +93,7 @@ const DelawareOAtemplate = ({ name, chain, date, arbitrator, ethAddress }) => {
           THIS OPERATING AGREEMENT is made and entered into effective
           {date}, by and among the parties assigned cryptographic interests in
           the decentralized autonomous organization described on{" "}
-          <Text style={{ textDecoration: "underline" }}>Schedule 1</Text>
+          <Text style={{ textDecoration: "underline" }}>Schedule 1</Text>{" "}
           (collectively referred to in this agreement as the "Members")
         </Text>
         <Text style={styles.heading1}>SECTION 1</Text>

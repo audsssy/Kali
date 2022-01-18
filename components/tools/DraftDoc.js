@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import {
   Button,
   Drawer,
@@ -14,36 +14,77 @@ import {
   useDisclosure,
   Textarea,
   Select,
+  VStack,
 } from "@chakra-ui/react"
 import { useForm } from "react-hook-form"
-import { Field } from "formik"
+import { PDFDownloadLink } from "@react-pdf/renderer"
+import DelawareOAtemplate from "../../legal/formation/llc/DelawareOAtemplate"
+import DelawareInvestmentClubTemplate from "../../legal/formation/llc/DelawareInvestmentClubTemplate"
+import WyomingOAtemplate from "../../legal/formation/llc/WyomingOAtemplate"
+
 
 function DraftDoc() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { handleSubmit, register } = useForm()
+  const [selection, setSelection] = useState("")
+  const [deLlcForm, setDeLlcForm] = useState(false)
+  const [deIcForm, setDeIcForm] = useState(false)
+  const [wyLlcForm, setWyLlcForm] = useState(false)
+  const [delawareLlc, setDelawareLlc] = useState({})
+  const [delawareIc, setDelawareIc] = useState({})
+  const [wyomingLlc, setWyomingLlc] = useState({})
   const initialField = useRef()
 
   const handleSend = (values) => {
+    values.agreement = selection
+    switch (selection) {
+      case "delaware-llc":
+        setDelawareLlc({
+          name: values.name,
+          chain: values.chain,
+          date: values.date,
+          ethAddress: values.ethAddress,
+          arbitrator: values.arbitrator,
+        })
+        setDeLlcForm(true)
+      case "delaware-ic":
+        setDelawareIc({
+          name: values.name,
+          chain: values.chain,
+          client: values.client,
+          network: values.network,
+          address: values.address,
+          code: values.code,
+          reference: values.reference,
+        })
+        setDeIcForm(true)
+      case "wyoming-llc":
+        setWyomingLlc({
+          name: values.name,
+          date: values.date,
+          email: values.email,
+          ethAddress: values.ethAddress,
+          id: values.id,
+        })
+        setWyLlcForm(true)
+    }
+
     console.log(values)
-    onClose()
   }
 
-  const handleSelect = (e) => {
-    console.log(e)
-  }
+  useEffect(() => {
+    console.log(selection)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selection])
 
   return (
     <>
-      <Button onClick={onOpen}>Contact us</Button>
-      <Drawer
-        isOpen={isOpen}
-        placement="bottom"
-        initialFocusRef={initialField}
-        onClose={onClose}
-      >
+      <Button onClick={onOpen}>Draft</Button>
+      <Drawer isOpen={isOpen} placement="bottom" initialFocusRef={initialField}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader>What do you need help with?</DrawerHeader>
+          <DrawerHeader>✂️</DrawerHeader>
           <DrawerBody>
             <Stack
               as="form"
@@ -53,50 +94,247 @@ function DraftDoc() {
             >
               <FormControl>
                 <FormLabel htmlFor="name">Select an agreement:</FormLabel>
-                <Select onChange={(e) => {handleSelect(e)}} id="agreement" placeholder="Select option" {...register("agreement")}>
+                <Select
+                  onChange={(e) => {
+                    setSelection(e.target.value)
+                    setDeLlcForm(false)
+                    setDeIcForm(false)
+                    setWyLlcForm(false)
+                  }}
+                  id="agreement"
+                  placeholder="Select option"
+                >
                   <option value="delaware-llc">Delaware LLC</option>
                   <option value="delaware-ic">Delaware Investment Club</option>
                   <option value="wyoming-llc">Wyoming LLC</option>
                 </Select>
               </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="name">Name</FormLabel>
-                <Input
-                  ref={initialField}
-                  id="name"
-                  placeholder="Enter your name"
-                  {...register("name")}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Input
-                  id="email"
-                  placeholder="Enter your email"
-                  {...register("email")}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="subject">Subject</FormLabel>
-                <Input
-                  id="subject"
-                  placeholder="Enter the subject"
-                  {...register("subject")}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="message">Message</FormLabel>
-                <Textarea
-                  id="message"
-                  placeholder="Enter a description of your needs"
-                  {...register("message")}
-                />
-              </FormControl>
+              {selection === "delaware-llc" && (
+                <>
+                  <FormControl>
+                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <Input
+                      ref={initialField}
+                      id="name"
+                      placeholder="Enter name of LLC"
+                      {...register("name")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="Chain">Chain</FormLabel>
+                    <Input
+                      id="Chain"
+                      placeholder="Enter Chain"
+                      {...register("Chain")}
+                    />
+                    <FormControl>
+                      <FormLabel htmlFor="date">Date</FormLabel>
+                      <Input
+                        id="date"
+                        placeholder="Enter formation date"
+                        {...register("date")}
+                      />
+                    </FormControl>
+                    <FormControl>
+                      <FormLabel htmlFor="ethAddress">Eth Address</FormLabel>
+                      <Input
+                        id="ethAddress"
+                        placeholder="Enter a description of your needs"
+                        {...register("ethAddress")}
+                      />
+                    </FormControl>
+                    <FormControl>
+                      <FormLabel htmlFor="arbitrator">Arbitrator</FormLabel>
+                      <Input
+                        id="arbitrator"
+                        placeholder="Enter an arbitrator"
+                        {...register("arbitrator")}
+                      />
+                    </FormControl>
+                  </FormControl>
+                </>
+              )}
+              {selection === "delaware-ic" && (
+                <>
+                  <FormControl>
+                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <Input
+                      ref={initialField}
+                      id="name"
+                      placeholder="Enter name of LLC"
+                      {...register("name")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="Chain">Chain</FormLabel>
+                    <Input
+                      id="Chain"
+                      placeholder="Enter Chain"
+                      {...register("Chain")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="client">Client</FormLabel>
+                    <Input
+                      id="client"
+                      placeholder="Enter client"
+                      {...register("client")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="network">Network</FormLabel>
+                    <Input
+                      id="network"
+                      placeholder="Enter a description of your needs"
+                      {...register("network")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="address">address</FormLabel>
+                    <Input
+                      id="address"
+                      placeholder="Enter an address"
+                      {...register("address")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="code">code</FormLabel>
+                    <Input
+                      id="code"
+                      placeholder="Enter an code"
+                      {...register("code")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="reference">reference</FormLabel>
+                    <Input
+                      id="reference"
+                      placeholder="Enter an reference"
+                      {...register("reference")}
+                    />
+                  </FormControl>
+                </>
+              )}
+              {selection === "wyoming-llc" && (
+                <>
+                  <FormControl>
+                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <Input
+                      ref={initialField}
+                      id="name"
+                      placeholder="Enter name of LLC"
+                      {...register("name")}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <FormLabel htmlFor="date">Date</FormLabel>
+                    <Input
+                      id="date"
+                      placeholder="Enter formation date"
+                      {...register("date")}
+                    />
+                    <FormControl>
+                      <FormLabel htmlFor="subject">Email</FormLabel>
+                      <Input
+                        id="email"
+                        placeholder="Enter founder email"
+                        {...register("email")}
+                      />
+                    </FormControl>
+                    <FormControl>
+                      <FormLabel htmlFor="ethAddress">Eth Address</FormLabel>
+                      <Input
+                        id="ethAddress"
+                        placeholder="Enter a description of your needs"
+                        {...register("ethAddress")}
+                      />
+                    </FormControl>
+                    <FormControl>
+                      <FormLabel htmlFor="id">Form ID</FormLabel>
+                      <Input
+                        id="id"
+                        placeholder="Enter a description of your needs"
+                        {...register("id")}
+                      />
+                    </FormControl>
+                  </FormControl>
+                </>
+              )}
             </Stack>
           </DrawerBody>
           <DrawerFooter>
+            {(deLlcForm && (
+              <PDFDownloadLink
+                document={
+                  <DelawareOAtemplate
+                    name={delawareLlc.name}
+                    chain={delawareLlc.chain}
+                    date={delawareLlc.date}
+                    ethAddress={delawareLlc.ethAddress}
+                    arbitrator={delawareLlc.arbitrator}
+                  />
+                }
+                fileName="Delaware Opearting Agreement"
+              >
+                {({ loading }) =>
+                  loading ? (
+                    <Button mr={3}>Loading Document...</Button>
+                  ) : (
+                    <Button mr={3}>Download</Button>
+                  )
+                }
+              </PDFDownloadLink>
+            )) ||
+              (deIcForm && (
+                <PDFDownloadLink
+                  document={
+                    <DelawareInvestmentClubTemplate
+                      name={delawareIc.name}
+                      chain={delawareIc.chain}
+                      client={delawareIc.date}
+                      network={delawareIc.network}
+                      address={delawareIc.address}
+                      code={delawareIc.code}
+                      reference={delawareIc.reference}
+                    />
+                  }
+                  fileName="Delaware Investment Club"
+                >
+                  {({ loading }) =>
+                    loading ? (
+                      <Button mr={3}>Loading Document...</Button>
+                    ) : (
+                      <Button mr={3}>Download</Button>
+                    )
+                  }
+                </PDFDownloadLink>
+              )) ||
+              (wyLlcForm && (
+                <PDFDownloadLink
+                  document={
+                    <WyomingOAtemplate
+                      name={wyomingLlc.name}
+                      date={wyomingLlc.date}
+                      email={wyomingLlc.email}
+                      ethAddress={wyomingLlc.ethAddress}
+                      id={wyomingLlc.id}
+                    />
+                  }
+                  fileName="Wyoming Operating Agreement"
+                >
+                  {({ loading }) =>
+                    loading ? (
+                      <Button mr={3}>Loading Document...</Button>
+                    ) : (
+                      <Button mr={3}>Download</Button>
+                    )
+                  }
+                </PDFDownloadLink>
+              ))}
+            {}
+            {}
             <Button type="submit" form="contact-form" mr={3}>
-              Send
+              Draft
             </Button>
             <Button variant="outline" onClick={onClose}>
               Cancel
