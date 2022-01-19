@@ -7,46 +7,38 @@ const styles = StyleSheet.create({
     paddingBottom: 65,
     paddingHorizontal: 60,
   },
-  title: {
-    fontSize: 25,
-    marginTop: 10,
-    marginBottom: 10,
-    textAlign: "center",
-    fontWeight: "bold",
-    fontStyle: "italic",
-    fontFamily: "Times-Roman",
-  },
   heading1: {
     fontSize: 12,
+    marginTop: 12,
     textAlign: "center",
     textDecoration: "underline",
     textTransform: "capitalize",
+    fontWeight: 700,
     fontFamily: "Times-Roman",
   },
   heading2: {
     fontSize: 12,
-    textAlign: "center",
-    fontFamily: "Times-Roman",
-  },
-  heading3: {
-    fontSize: 12,
-    textAlign: "center",
-    fontFamily: "Times-Roman",
-  },
-  subheader: {
-    fontSize: 12,
+    marginHorizontal: 12,
     textAlign: "center",
     textTransform: "capitalize",
     fontFamily: "Times-Roman",
   },
+  heading3: {
+    fontSize: 12,
+    marginHorizontal: 12,
+    textAlign: "center",
+    fontFamily: "Times-Roman",
+  },
   text: {
     marginTop: 12,
+    marginHorizontal: 12,
     fontSize: 12,
     textAlign: "justify",
     fontFamily: "Times-Roman",
   },
   numbered_list: {
-    margin: 12,
+    marginTop: 12,
+    marginHorizontal: 12,
     fontSize: 12,
     textIndent: 30,
     textAlign: "justify",
@@ -54,15 +46,9 @@ const styles = StyleSheet.create({
   },
   bulleted_list: {
     fontSize: 12,
-    marginBottom: 12,
+    marginHorizontal: 12,
     textIndent: 30,
     textAlign: "justify",
-    fontFamily: "Times-Roman",
-  },
-  header: {
-    fontSize: 12,
-    marginBottom: 20,
-    textAlign: "center",
     fontFamily: "Times-Roman",
   },
   pageNumber: {
@@ -77,7 +63,7 @@ const styles = StyleSheet.create({
 })
 
 const Br = () => "\n"
-const Indent = () => "   "
+const Tab = () => "  "
 
 const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address, code, reference }) => {
   return (
@@ -92,7 +78,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
         <Text style={styles.heading1}>BACKGROUND</Text>
         <Text style={styles.numbered_list}>
           A.
-          <Indent />
+          <Tab />
           The Org has been formed for the purposes contemplated by this
           Agreement by the filing with the Secretary of State of the State of
           Delaware of a Certificate of Formation (the "Certificate") in
@@ -100,11 +86,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           B.
-          <Indent />
+          <Tab />
           This Agreement is being entered into for the purposes of organizing
           and establishing the governance and operations of the Org and the
           rights and obligations of membership in the Org.
-          <Br />
           <Br />
         </Text>
         <Text style={styles.heading1}>THE AGREEMENT</Text>
@@ -116,38 +101,40 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
         </Text>
         <Text style={styles.numbered_list}>
           1.
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>
             ORGANIZATIONAL MATTER.
           </Text>
           <Br />
           <Br />
           1.1
-          <Indent />
-          <Text style={{ textDecoration: "underline" }}>Terms and Conditions of Membership.</Text>
+          <Tab />
+          <Text style={{ textDecoration: "underline" }}>
+            Terms and Conditions of Membership.
+          </Text>
           <Br />
           <Br />
           (a)
-          <Indent />
+          <Tab />
           Nature of Agreement.
-          <Indent />
+          <Tab />
           This Agreement constitutes the Org’s limited liability company
           agreement (as defined in the Delaware LLC Act).
           <Br />
           <Br />
           (b)
-          <Indent />
+          <Tab />
           Governing Terms.
-          <Indent />
+          <Tab />
           All rights, powers and obligations of the Members relating to the Org
           shall be governed and determined in accordance with: (i) the terms and
           conditions of this Agreement; and (ii) the Delaware LLC Act.
           <Br />
           <Br />
           (c)
-          <Indent />
+          <Tab />
           Relationship of this Agreement to the Delaware LLC Act.
-          <Indent />
+          <Tab />
           To the extent that: (i) any provision of the Delaware LLC Act provides
           that such provision or any right, power or obligation specified
           therein or in the Delaware LLC Act shall apply “unless otherwise
@@ -162,19 +149,19 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.2
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>Name of Org.</Text>
-          <Indent />
+          <Tab />
           The name of the Org shall be {name} or such other name as may be
           determined from time to time in accordance with this Agreement.
           <Br />
           <Br />
           1.3
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>
             Place of Business; Registered Office.
           </Text>
-          <Indent />
+          <Tab />
           The Org has no fixed offices or place of business. The Org’s
           activities are directed, controlled, and coordinated primarily through
           the Designated Blockchain Network and other electronic communications
@@ -187,9 +174,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.4
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>Purposes.</Text>
-          <Indent />
+          <Tab />
           The purposes and business of the Org shall be to engage in any other
           lawful acts or activities for which limited liability companies may be
           organized under the Delaware LLC Act, as determined from time to time
@@ -197,9 +184,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.5
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>Term.</Text>
-          <Indent />
+          <Tab />
           The term and existence of the Org commenced upon the filing of the
           Certificate and shall respectively continue until the dissolution, if
           any, of the Org and cancellation of the Certificate, if ever, in
@@ -207,9 +194,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.6
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>Tax Partnership.</Text>
-          <Indent />
+          <Tab />
           The Members intend that the Org shall be treated as a partnership for
           federal and, if applicable, state or local income tax purposes; each
           Member and the Org shall file all tax returns and shall otherwise take
@@ -218,11 +205,11 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.7
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>
             Securities Law Partnership.
           </Text>
-          <Indent />
+          <Tab />
           The Members intend that the Org shall be treated as a partnership for
           federal and, if applicable, state or local securities law purposes;
           each Member and the Org shall actively participate in the management
@@ -231,11 +218,11 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.8
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>
             Not an Investment Company
           </Text>
-          <Indent />
+          <Tab />
           The Org is not intended to be or become an Entity required to register
           as an “investment company” as defined in Section 3(a)(1)(A) the
           Investment Company Act of 1940, as amended (the “Investment Company
@@ -254,12 +241,12 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1.9
-          <Indent />
+          <Tab />
           <Text style={{ textDecoration: "underline" }}>
             Illegal Distributions; Maintaining Sufficient Net Assets For Member
             Exits.
           </Text>
-          <Indent />
+          <Tab />
           §18-607 of the Delaware LLC Act provides as follows:
           <Br />
           <Br />
@@ -716,12 +703,12 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           the provisions of this Section 1.10.
         </Text>
         <Text style={styles.heading1}>SECTION 2</Text>
-        <Text style={styles.subheader}>
+        <Text style={styles.heading2}>
           ADMISSION, EXPULSION, RIGHTS AND OBLIGATIONS OF MEMBERS.
         </Text>
         <Text style={styles.numbered_list}>
           2.1
-          <Indent />
+          <Tab />
           Certain Defined Terms. The following defined terms have the
           definitions that are set forth for them below:
           <Br />
@@ -823,7 +810,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           Person or by any one or more of its Subsidiaries.
           <Br />
           <Br />
-          2.2 Admission of Members.
+          2.2
+          <Tab />
+          Admission of Members.
           <Br />
           <Br />
           (a) Admission as a Member. The sole and exclusive method for the
@@ -902,7 +891,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           procedures to be removed from the Designated Smart Contract.
           <Br />
           <Br />
-          2.3 Termination of Membership.
+          2.3
+          <Tab />
+          Termination of Membership.
           <Br />
           <Br />
           (a) No Resignation While Holding Shares. Without limiting clause “(b)”
@@ -941,7 +932,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           Members or their designated representatives.
           <Br />
           <Br />
-          2.4 Representations and Warranties of Members.
+          2.4
+          <Tab />
+          Representations and Warranties of Members.
           <Br />
           <Br />
           Each Person who is proposing to become or actually becomes a Member
@@ -1189,8 +1182,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           family member or close associate of a senior foreign political figure.
           <Br />
           <Br />
-          2.5 No Personal Liability. Except as otherwise provided in the
-          Delaware LLC Act, by applicable Legal Requirement or expressly in this
+          2.5
+          <Tab />
+          No Personal Liability. Except as otherwise provided in the Delaware
+          LLC Act, by applicable Legal Requirement or expressly in this
           Agreement (including Section 1.10(c)), no Member will be obligated
           personally for any debt, obligation, or other Liability of the Org or
           any other Member, whether arising in contract, tort, or otherwise,
@@ -1211,7 +1206,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           such Member.
           <Br />
           <Br />
-          2.6 No Right of Partition. No Member shall have the right to seek or
+          2.6
+          <Tab />
+          No Right of Partition. No Member shall have the right to seek or
           obtain partition by court decree or operation of law of, or the right
           to personally own or use, any Org Property. The immediately preceding
           sentence shall not be deemed to limit any rights of a Member to
@@ -1219,13 +1216,17 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           authorized by the Designated Smart Contract.
           <Br />
           <Br />
-          2.7 No Appraisal Rights. No Member shall have any appraisal or
-          dissenters’ rights in connection with a merger, consolidation or other
-          acquisition of the Org or the assets of the Org, and §18-210 of the
-          Delaware LLC Act (entitled "Contractual Appraisal Rights") shall not
-          apply to the Org.
+          2.7
+          <Tab />
+          No Appraisal Rights. No Member shall have any appraisal or dissenters’
+          rights in connection with a merger, consolidation or other acquisition
+          of the Org or the assets of the Org, and §18-210 of the Delaware LLC
+          Act (entitled "Contractual Appraisal Rights") shall not apply to the
+          Org.
           <Br />
-          2.8 Information Rights and Obligations
+          2.8
+          <Tab />
+          Information Rights and Obligations
           <Br />
           <Br />
           (a) Members’ Information Rights. Subject to clause “(b)” of this
@@ -1334,7 +1335,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           remedy limiting or mitigating the effects of such Order.
           <Br />
           <Br />
-          2.9 Exculpation of Members and Elimination of Fiduciary Duties; No
+          2.9
+          <Tab />
+          Exculpation of Members and Elimination of Fiduciary Duties; No
           Indemnification.
           <Br />
           <Br />
@@ -1424,12 +1427,12 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
         </Text>
         <Text style={styles.heading1}>SECTION 3</Text>
-        <Text style={styles.subheader}>
+        <Text style={styles.heading2}>
           MATTERS RELATING TO CAPITAL ACCOUNTS
         </Text>
         <Text style={styles.numbered_list}>
           3.1
-          <Indent />
+          <Tab />
           Initial Capital Contributions.
           <Br />
           <Br />
@@ -1449,7 +1452,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           3.2
-          <Indent />
+          <Tab />
           Additional Capital Contributions.
           <Br />
           <Br />
@@ -1468,7 +1471,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           3.3
-          <Indent />
+          <Tab />
           Maintenance of Capital Accounts.
           <Br />
           <Br />
@@ -1531,7 +1534,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           3.4
-          <Indent />
+          <Tab />
           Allocation of Profits and Losses.
           <Br />
           <Br />
@@ -1552,12 +1555,14 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           4.
-          <Indent />
-          MANAGEMENT AND VOTING.
+          <Tab />
+          Management and Voting.
           <Br />
           <Br />
-          4.1 Definitions. The following defined terms shall have the
-          definitions that are ascribed to them below:
+          4.1
+          <Tab />
+          Definitions. The following defined terms shall have the definitions
+          that are ascribed to them below:
           <Br />
           <Br />
           (a) “Extraordinary Proposal” means any Proposal for the Org to, or for
@@ -1643,7 +1648,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           4.2
-          <Indent />
+          <Tab />
           Management of the Org.
           <Br />
           <Br />
@@ -1690,7 +1695,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           4.3
-          <Indent />
+          <Tab />
           Voting Procedures
           <Br />
           <Br />
@@ -1783,7 +1788,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           4.4
-          <Indent />
+          <Tab />
           Proposal Approval and Processing.
           <Br />
           <Br />
@@ -1814,14 +1819,16 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           5.
-          <Indent />
+          <Tab />
           TRANSFERS AND REDEMPTIONS OF MEMBERSHIP INTERESTS.
           <Br />
           <Br />
-          5.1 General Prohibition Against Transfers. Except as set forth in
-          Section 5.2 or Section 5.4, no Member shall directly or indirectly
-          sell, transfer, assign, pledge, mortgage, exchange, hypothecate, grant
-          a security interest in, or otherwise directly or indirectly dispose of
+          5.1
+          <Tab />
+          General Prohibition Against Transfers. Except as set forth in Section
+          5.2 or Section 5.4, no Member shall directly or indirectly sell,
+          transfer, assign, pledge, mortgage, exchange, hypothecate, grant a
+          security interest in, or otherwise directly or indirectly dispose of
           or encumber any Membership Interests or Shares or any direct or
           indirect record or beneficial economic, voting or other interest
           therein or right with respect thereto (including by operation of law)
@@ -1842,10 +1849,12 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           to Article 8 of the Uniform Commercial Code.
           <Br />
           <Br />
-          5.2 Exception for Inheritance. Notwithstanding Section 5.1, but
-          subject to the other clauses of this Section 5.2, a Member’s economic
-          rights in its Membership Interest may be Transferred as a result of
-          such Member’s death to:
+          5.2
+          <Tab />
+          Exception for Inheritance. Notwithstanding Section 5.1, but subject to
+          the other clauses of this Section 5.2, a Member’s economic rights in
+          its Membership Interest may be Transferred as a result of such
+          Member’s death to:
           <Br />
           <Br />
           (a) such Member’s spouse;
@@ -1876,8 +1885,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           redeemed for Tokens.
           <Br />
           <Br />
-          5.3 Unpermitted Transfers Are Void Or Solely Of Economic Interests.
-          Any Transfer or purported or attempted Transfer in violation or
+          5.3
+          <Tab />
+          Unpermitted Transfers Are Void Or Solely Of Economic Interests. Any
+          Transfer or purported or attempted Transfer in violation or
           contravention this Section 5 shall be void ab initio and of no force
           or effect. In the event that any restriction on Transfer set forth
           herein is unenforceable under applicable Legal Requirement such that a
@@ -1892,7 +1903,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           any Person be deemed terminated, cancelled, null and void.
           <Br />
           <Br />
-          5.4 Redemptions of Membership Interests.
+          5.4
+          <Tab />
+          Redemptions of Membership Interests.
           <Br />
           <Br />
           (a) Exits.
@@ -2043,12 +2056,14 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           6.
-          <Indent />
+          <Tab />
           DISSOLUTION AND WINDING UP.
           <Br />
           <Br />
-          6.1 No Automatic Dissolutions.
-          <Indent />
+          6.1
+          <Tab />
+          No Automatic Dissolutions.
+          <Tab />
           Except as otherwise set forth in this Section 6, the Org is intended
           to have perpetual existence. The admission of any additional
           Member(s), the expulsion or resignation of any Member(s), or the
@@ -2057,8 +2072,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           Org.
           <Br />
           <Br />
-          6.2 Dissolution.
-          <Indent />
+          6.2
+          <Tab />
+          Dissolution.
+          <Tab />
           The Org shall dissolve, and its affairs shall be wound up upon the
           first to occur of the following: (a) upon approval by the Members of a
           Liquidation Proposal providing for the dissolution and winding up the
@@ -2067,11 +2084,13 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           administrative dissolution under §18-802 of the Delaware LLC Act.
           <Br />
           <Br />
-          6.3 Liquidation and Termination.
-          <Indent /> On the dissolution of the Org, the Members or their
-          designated representatives shall act as liquidators or may appoint one
-          or more other Persons to act as liquidators. The liquidators shall
-          proceed diligently to wind up the affairs of the Org and make final
+          6.3
+          <Tab />
+          Liquidation and Termination.
+          <Tab /> On the dissolution of the Org, the Members or their designated
+          representatives shall act as liquidators or may appoint one or more
+          other Persons to act as liquidators. The liquidators shall proceed
+          diligently to wind up the affairs of the Org and make final
           distributions as provided herein and in the Delaware LLC Act. The
           costs of liquidation shall be borne as an expense of the Org. Until
           final distribution, the liquidators shall continue to operate the Org
@@ -2105,8 +2124,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           those funds.
           <Br />
           <Br />
-          6.4 Cancellation of Certificate.
-          <Indent />
+          6.4
+          <Tab />
+          Cancellation of Certificate.
+          <Tab />
           On completion of the distribution of Org assets and all other
           activities necessary for the winding-up of the Org as provided herein,
           the Org shall be terminated (and the Org shall not be terminated prior
@@ -2119,26 +2140,34 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           this Section 6 .4.
           <Br />
           <Br />
-          6.5 Reasonable Time for Winding Up.
-          <Indent />
+          6.5
+          <Tab />
+          Reasonable Time for Winding Up.
+          <Tab />
           A reasonable time shall be allowed for the orderly winding up of the
           business and affairs of the Org and the liquidation of its assets
           pursuant to Section 6.3 in order to minimize any losses otherwise
           attendant upon such winding up.
           <Br />
           <Br />
-          6.6 No Personal Liability of Liquidators.
-          <Indent />
+          6.6
+          <Tab />
+          No Personal Liability of Liquidators.
+          <Tab />
           The liquidators shall not be personally liable for the return of
           Capital Contributions or any portion thereof to the Members (it being
           understood that any such return shall be made solely from Org assets
           <Br />
           <Br />
-          7. MISCELLANEOUS PROVISIONS.
+          7.
+          <Tab />
+          MISCELLANEOUS PROVISIONS.
           <Br />
           <Br />
-          7.1 Notices.
-          <Indent />
+          7.1
+          <Tab />
+          Notices.
+          <Tab />
           Any notice or other communication required or permitted to be
           delivered to any Party in connection with this Agreement shall be in
           writing and shall be deemed properly delivered, given and received to
@@ -2154,16 +2183,20 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           closed.
           <Br />
           <Br />
-          7.2 Headings.
-          <Indent />
+          7.2
+          <Tab />
+          Headings.
+          <Tab />
           The headings and captions contained in this Agreement are for
           convenience of reference only, shall not be deemed to be a part of
           this Agreement and shall not be referred to in connection with the
           construction or interpretation of this Agreement.
           <Br />
           <Br />
-          7.3 Counterparts and Exchanges by Electronic Delivery.
-          <Indent />
+          7.3
+          <Tab />
+          Counterparts and Exchanges by Electronic Delivery.
+          <Tab />
           This Agreement may be executed in several counterparts, each of which
           shall constitute an original and all of which, when taken together,
           shall constitute one agreement. Signatures may be provided by
@@ -2171,8 +2204,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           the parties to the terms and conditions of this Agreement.
           <Br />
           <Br />
-          7.4 Governing Law.
-          <Indent />
+          7.4
+          <Tab />
+          Governing Law.
+          <Tab />
           This Agreement shall be governed by and construed and interpreted in
           accordance with the laws of the State of Delaware irrespective of the
           choice of laws principles of the State of Delaware, as to all matters,
@@ -2182,8 +2217,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           or dispute.
           <Br />
           <Br />
-          7.5 Venue.
-          <Indent />
+          7.5
+          <Tab />
+          Venue.
+          <Tab />
           Any action, suit or other legal proceeding relating to this Agreement
           or the matters contemplated by this Agreement, including any dispute
           involving any Member in its capacity as such, shall be brought or
@@ -2218,7 +2255,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           is to receive notice in accordance with Section 7.1.
           <Br />
           <Br />
-          7.6 Successors and Assigns; Parties in Interest.
+          7.6
+          <Tab />
+          Successors and Assigns; Parties in Interest.
           <Br />
           <Br />
           (a) This Agreement shall be binding upon: (i) each Member; and (ii)
@@ -2239,24 +2278,30 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           shall have any rights under this Agreement.
           <Br />
           <Br />
-          7.7 Amendments.
-          <Indent />
+          7.7
+          <Tab />
+          Amendments.
+          <Tab />
           Except as otherwise expressly provided herein, this Agreement may not
           be amended, modified, altered or supplemented other than by means of a
           written instrument approved by the Members in an Extraordinary
           Proposal.
           <Br />
           <Br />
-          7.8 Title to Org’s Assets.
-          <Indent />
+          7.8
+          <Tab />
+          Title to Org’s Assets.
+          <Tab />
           The Org’s assets shall be deemed to be owned by the Org as an entity,
           and the Org shall have legal title thereto, and no Member,
           individually or collectively, shall have any ownership interest in
           such Org assets or any portion thereof.
           <Br />
           <Br />
-          7.9 Severability.
-          <Indent />
+          7.9
+          <Tab />
+          Severability.
+          <Tab />
           In the event that any provision of this Agreement, or the application
           of any such provision to any Person or set of circumstances, shall be
           determined to be invalid, unlawful, void or unenforceable to any
@@ -2275,16 +2320,20 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           provisions of this Agreement not so severed.
           <Br />
           <Br />
-          7.10 Entire Agreement.
-          <Indent />
+          7.10
+          <Tab />
+          Entire Agreement.
+          <Tab />
           This Agreement sets forth the entire understanding of the parties
           relating to the subject matter thereof and supersedes all prior
           agreements and understandings among or between the Members relating to
           the subject matter thereof.
           <Br />
           <Br />
-          7.11 Force Majeure.
-          <Indent />
+          7.11
+          <Tab />
+          Force Majeure.
+          <Tab />
           “Force Majeure Event” means, in respect of any Person, any act,
           omission or occurrence whatsoever, whether similar or dissimilar to
           those referred to in this paragraph, which is beyond the reasonable
@@ -2314,7 +2363,9 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           prevents such performance.
           <Br />
           <Br />
-          7.12 Construction.
+          7.12
+          <Tab />
+          Construction.
           <Br />
           <Br />
           (a) For purposes of this Agreement, whenever the context requires: (i)
@@ -2385,7 +2436,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           1. Agreement to be Bound.
-          <Indent />
+          <Tab />
           The Candidate acknowledges that he, she or it has received and
           reviewed a complete copy of the Agreement. The Candidate agrees that
           upon execution and delivery of this Joinder and approval of the
@@ -2400,7 +2451,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           <Br />
           <Br />
           2. Miscellaneous.
-          <Indent />
+          <Tab />
           Section 7 of the Agreement is incorporated herein by reference and
           shall apply to the terms and provisions of this Joinder, mutatis
           mutandis. The Candidate has caused this Joinder to be executed and
@@ -2423,7 +2474,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
         <Text style={styles.heading1}>
           Exhibit B - ACCREDITED INVESTOR QUESTIONNAIRE
         </Text>
-        <Text style={styles.text}>{name}</Text>
+        <Text style={styles.heading2}>{name}</Text>
         <Text style={styles.numbered_list}>
           This Questionnaire is being distributed to certain individuals and
           entities which may be offered the opportunity to purchase securities
@@ -2845,17 +2896,17 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           include, but are not limited to, any of the following:
           <Br />
           <Br />
-          • <Indent /> the entity may attempt to raise additional funding from
+          • <Tab /> the entity may attempt to raise additional funding from
           other sources, causing dilution of {name}
           ’s investment;
           <Br />
           <Br />
-          • <Indent /> the entity may issue different cryptographic tokens or
+          • <Tab /> the entity may issue different cryptographic tokens or
           assets, in addition to or in lieu of assets owed to {name}
           ; or
           <Br />
           <Br />
-          • <Indent /> the entity may not deliver any cryptographic tokens or
+          • <Tab /> the entity may not deliver any cryptographic tokens or
           assets.
           <Br />
           <Br />
@@ -3068,10 +3119,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           .
           <Br />
           <Br />
-          {name}
-          may be deemed a Money Services Business requiring State and Federal
-          supervision, which {name}
-          may be incapable of complying with.
+          {name} may be deemed a Money Services Business requiring State and Federal supervision, which {name} may be incapable of complying with.
           <Br />
           <Br />
           The Bank Secrecy Act imposes a requirement for money transmitters and
@@ -3181,38 +3229,38 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           affecting the further development of the blockchain industry include:
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           continued worldwide growth in the adoption and use of blockchain
           networks and assets;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           the maintenance and development of the open-source software protocol
           of blockchain networks;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           changes in consumer demographics and public tastes and preferences;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           the popularity or acceptance of the Bitcoin, Ethereum, or other
           networks;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           the availability and popularity of other forms or methods of buying
           and selling goods and services, including new means of using fiat
           currencies;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           government and quasi-government regulation of blockchain networks and
           assets, including any restrictions on access, operation and use of
           blockchain networks and assets; and
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           the general economic environment and conditions relating to blockchain
           networks and assets.
           <Br />
@@ -3351,11 +3399,10 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           blockchain assets, including, but not limited to:
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           Global blockchain asset supply;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Global blockchain asset demand, which can be influenced by the growth
           of retail merchants’ and commercial businesses’ acceptance of
           blockchain assets like cryptocurrencies as payment for goods and
@@ -3364,64 +3411,53 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           the use and holding of blockchain assets is safe and secure, and the
           regulatory restrictions on their use;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Changes in the software, software requirements or hardware
           requirements underlying the blockchain networks;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Changes in the rights, obligations, incentives, or rewards for the
           various participants in blockchain networks; • The cost of trading and
           transacting in blockchain assets, and whether such costs may become
           fixed or standardized;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Investors’ expectations with respect to the rate of inflation;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Interest rates;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Currency exchange rates, including the rates at which blockchain
           assets may be exchanged for fiat currencies;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Fiat currency withdrawal and deposit policies of blockchain asset
           trading platforms and liquidity on such platforms;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Interruptions in service or other failures of major blockchain asset
           trading platforms;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Investment and trading activities of large investors, including
           private and registered funds, that may directly or indirectly invest
           in blockchain networks or blockchain assets;
           <Br />
           <Br />
-          •<Indent />
+          •<Tab />
           Monetary policies of governments, trade restrictions, currency
           devaluations and revaluations;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Regulatory measures, if any, that affect the use of blockchain assets;
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           The maintenance and development of the open-source software utilized
           in blockchain networks; • Global or regional political, economic or
           financial events and situations; or
           <Br />
-          <Br />
-          •<Indent />
+          •<Tab />
           Expectations among blockchain network participants that the value of
           such blockchain assets will soon change.
           <Br />
@@ -3432,8 +3468,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           industry as a whole and may also cause the price of other blockchain
           assets to fluctuate. The value of blockchain assets and fluctuations
           in the price of blockchain assets could materially and adversely
-          affect any investment in {name}
-          .
+          affect any investment in {name}.
           <Br />
           <Br />
           The regulatory regimes governing blockchain technologies, blockchain

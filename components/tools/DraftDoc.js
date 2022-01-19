@@ -121,11 +121,11 @@ function DraftDoc() {
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="Chain">Chain</FormLabel>
+                    <FormLabel htmlFor="chain">Chain</FormLabel>
                     <Input
-                      id="Chain"
-                      placeholder="Enter Chain"
-                      {...register("Chain")}
+                      id="chain"
+                      placeholder="Enter chain"
+                      {...register("chain")}
                     />
                     <FormControl>
                       <FormLabel htmlFor="date">Date</FormLabel>
@@ -166,11 +166,11 @@ function DraftDoc() {
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="Chain">Chain</FormLabel>
+                    <FormLabel htmlFor="chain">Chain</FormLabel>
                     <Input
-                      id="Chain"
-                      placeholder="Enter Chain"
-                      {...register("Chain")}
+                      id="chain"
+                      placeholder="Enter chain"
+                      {...register("chain")}
                     />
                   </FormControl>
                   <FormControl>
