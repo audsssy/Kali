@@ -3233,40 +3233,33 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           continued worldwide growth in the adoption and use of blockchain
           networks and assets;
           <Br />
-          <Br />
           •<Tab />
           the maintenance and development of the open-source software protocol
           of blockchain networks;
           <Br />
-          <Br />
           •<Tab />
           changes in consumer demographics and public tastes and preferences;
-          <Br />
           <Br />
           •<Tab />
           the popularity or acceptance of the Bitcoin, Ethereum, or other
           networks;
-          <Br />
           <Br />
           •<Tab />
           the availability and popularity of other forms or methods of buying
           and selling goods and services, including new means of using fiat
           currencies;
           <Br />
-          <Br />
           •<Tab />
           government and quasi-government regulation of blockchain networks and
           assets, including any restrictions on access, operation and use of
           blockchain networks and assets; and
-          <Br />
           <Br />
           •<Tab />
           the general economic environment and conditions relating to blockchain
           networks and assets.
           <Br />
           <Br />
-          {name}
-          ’s business model is dependent on continued investment in and
+          {name}’s business model is dependent on continued investment in and
           development of the blockchain industry and related technologies. If
           investments in the blockchain industry become less attractive to
           investors or innovators and developers, or if blockchain networks and
@@ -3319,8 +3312,7 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           {name}
           ’s business directly or the market for blockchain assets generally. In
           either case, the occurrence of these events could have a material
-          adverse effect on an investment in {name}
-          .
+          adverse effect on an investment in {name}.
           <Br />
           <Br />
           Each blockchain network is dependent upon its users and contributors,
@@ -3443,7 +3435,6 @@ const DelawareInvestmentClubTemplate = ({ name, chain, client, network, address,
           Investment and trading activities of large investors, including
           private and registered funds, that may directly or indirectly invest
           in blockchain networks or blockchain assets;
-          <Br />
           <Br />
           •<Tab />
           Monetary policies of governments, trade restrictions, currency
