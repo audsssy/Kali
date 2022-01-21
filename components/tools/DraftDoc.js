@@ -112,42 +112,52 @@ function DraftDoc() {
               {selection === "delaware-llc" && (
                 <>
                   <FormControl>
-                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <FormLabel mt={3} htmlFor="name">
+                      DAO LLC Name
+                    </FormLabel>
                     <Input
                       ref={initialField}
                       id="name"
-                      placeholder="Enter name of LLC"
+                      placeholder="KALI"
                       {...register("name")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="chain">Chain</FormLabel>
+                    <FormLabel mt={1} htmlFor="chain">
+                      Designated Blockchain
+                    </FormLabel>
                     <Input
                       id="chain"
-                      placeholder="Enter chain"
+                      placeholder="Ethereum mainnet, Arbitrum, Matic, etc."
                       {...register("chain")}
                     />
                     <FormControl>
-                      <FormLabel htmlFor="date">Date</FormLabel>
+                      <FormLabel mt={1} htmlFor="date">
+                        Formation Date
+                      </FormLabel>
                       <Input
                         id="date"
-                        placeholder="Enter formation date"
+                        placeholder="MM/DD/YYYY"
                         {...register("date")}
                       />
                     </FormControl>
                     <FormControl>
-                      <FormLabel htmlFor="ethAddress">Eth Address</FormLabel>
+                      <FormLabel mt={1} htmlFor="ethAddress">
+                        DAO LLC Organizer Ethereum Address
+                      </FormLabel>
                       <Input
                         id="ethAddress"
-                        placeholder="Enter a description of your needs"
+                        placeholder="0xKALI"
                         {...register("ethAddress")}
                       />
                     </FormControl>
                     <FormControl>
-                      <FormLabel htmlFor="arbitrator">Arbitrator</FormLabel>
+                      <FormLabel mt={1} htmlFor="arbitrator">
+                        Arbitrator
+                      </FormLabel>
                       <Input
                         id="arbitrator"
-                        placeholder="Enter an arbitrator"
+                        placeholder="JAMS, LexDAO, etc."
                         {...register("arbitrator")}
                       />
                     </FormControl>
@@ -157,59 +167,73 @@ function DraftDoc() {
               {selection === "delaware-ic" && (
                 <>
                   <FormControl>
-                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <FormLabel mt={3} htmlFor="name">
+                      DAO LLC NAME
+                    </FormLabel>
                     <Input
                       ref={initialField}
                       id="name"
-                      placeholder="Enter name of LLC"
+                      placeholder="KALI"
                       {...register("name")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="chain">Chain</FormLabel>
+                    <FormLabel mt={1} htmlFor="chain">
+                      Designated Blockchain
+                    </FormLabel>
                     <Input
                       id="chain"
-                      placeholder="Enter chain"
+                      placeholder="Ethereum mainnet, Arbitrum, Matic, etc."
                       {...register("chain")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="client">Client</FormLabel>
+                    <FormLabel mt={1} htmlFor="client">
+                      Designated Blockchain Client
+                    </FormLabel>
                     <Input
                       id="client"
-                      placeholder="Enter client"
+                      placeholder="Geth, OpenEthereum, etc."
                       {...register("client")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="network">Network</FormLabel>
+                    <FormLabel mt={1} htmlFor="network">
+                      Designated Blochain Network
+                    </FormLabel>
                     <Input
                       id="network"
-                      placeholder="Enter a description of your needs"
+                      placeholder="Bitcoin, Ethereum, etc."
                       {...register("network")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="address">address</FormLabel>
+                    <FormLabel mt={1} htmlFor="address">
+                      Designated Smart Contract Address
+                    </FormLabel>
                     <Input
                       id="address"
-                      placeholder="Enter an address"
+                      placeholder="0xKALI"
                       {...register("address")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="code">code</FormLabel>
+                    <FormLabel mt={1} htmlFor="code">
+                      Designated Smart Contract Source Code
+                    </FormLabel>
                     <Input
                       id="code"
-                      placeholder="Enter an code"
+                      placeholder="Enter code"
                       {...register("code")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="reference">reference</FormLabel>
+                    <FormLabel mt={1} htmlFor="reference">
+                      Designated Smart Contract Source Code Reference (url)
+                    </FormLabel>
                     <Input
                       id="reference"
-                      placeholder="Enter an reference"
+                      placeholder="https://test.kalidao.xyz/"
                       {...register("reference")}
                     />
                   </FormControl>
@@ -218,42 +242,52 @@ function DraftDoc() {
               {selection === "wyoming-llc" && (
                 <>
                   <FormControl>
-                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <FormLabel mt={3} htmlFor="name">
+                      DAO LLC Name
+                    </FormLabel>
                     <Input
                       ref={initialField}
                       id="name"
-                      placeholder="Enter name of LLC"
+                      placeholder="KALI"
                       {...register("name")}
                     />
                   </FormControl>
                   <FormControl>
-                    <FormLabel htmlFor="date">Date</FormLabel>
+                    <FormLabel mt={1} htmlFor="date">
+                      Formation Date
+                    </FormLabel>
                     <Input
                       id="date"
-                      placeholder="Enter formation date"
+                      placeholder="MM/DD/YYYY"
                       {...register("date")}
                     />
                     <FormControl>
-                      <FormLabel htmlFor="subject">Email</FormLabel>
+                      <FormLabel mt={1} htmlFor="subject">
+                        DAO LLC Organizer Email
+                      </FormLabel>
                       <Input
                         id="email"
-                        placeholder="Enter founder email"
+                        placeholder="kalidao@protonmail.com"
                         {...register("email")}
                       />
                     </FormControl>
                     <FormControl>
-                      <FormLabel htmlFor="ethAddress">Eth Address</FormLabel>
+                      <FormLabel mt={1} htmlFor="ethAddress">
+                        DAO LLC Organizer EthAddress
+                      </FormLabel>
                       <Input
                         id="ethAddress"
-                        placeholder="Enter a description of your needs"
+                        placeholder="0xKALI"
                         {...register("ethAddress")}
                       />
                     </FormControl>
                     <FormControl>
-                      <FormLabel htmlFor="id">Form ID</FormLabel>
+                      <FormLabel mt={1} htmlFor="id">
+                        Books and Records
+                      </FormLabel>
                       <Input
                         id="id"
-                        placeholder="Enter a description of your needs"
+                        placeholder="Enter IPFS hash"
                         {...register("id")}
                       />
                     </FormControl>

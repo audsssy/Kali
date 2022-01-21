@@ -77,7 +77,7 @@ const WyomingOAtemplate = ({ name, date, email, ethAddress, id }) => {
         <Text style={styles.text}>
           THIS OPERATING AGREEMENT is made and entered into effective as of{" "}
           {date}, by and among the parties indicated on{" "}
-          <Text style={{ textDecoration: "underline" }}>Schedule 1</Text>
+          <Text style={{ textDecoration: "underline" }}>Schedule 1</Text>{" "}
           contributing to and managing "{name}", a limited liability company
           operating on the Ethereum blockchain network ("
           <Text style={{ textDecoration: "underline" }}>Ethereum</Text>")
